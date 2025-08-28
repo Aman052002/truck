@@ -24,22 +24,23 @@ abstract class AppColors {
   Color get text;
 
   Color get onText;
+
+  Color get inversePrimary;
 }
 
 class AppLightColors extends AppColors {
   @override
-  // Color get primary => const Color(0xffF37421);
-  Color get primary => const Color(0xffFF6200);
+  Color get primary => const Color(0xff1F8BE6);
 
   @override
   Color get onPrimary => const Color(0xffFFFFFF);
 
   @override
   // Color get secondary => const Color(0xffFAA51A);
-  Color get secondary => const Color(0xffFF6200);
+  Color get secondary => const Color(0xff2BAEFF);
 
   @override
-  Color get onSecondary => const Color(0xffF37421);
+  Color get onSecondary => const Color(0xff165BAA);
 
   @override
   Color get caption => const Color(0xff44474B);
@@ -48,7 +49,7 @@ class AppLightColors extends AppColors {
   Color get captionLight => const Color(0xffF6F6F7);
 
   @override
-  Color get captionHint => const Color(0xff5E5E5E);
+  Color get captionHint => const Color(0xffF2F2F2);
 
   @override
   Color get error => const Color(0xffFF4D4C);
@@ -64,19 +65,22 @@ class AppLightColors extends AppColors {
 
   @override
   Color get success => const Color(0xff00A037);
+
+  @override
+  Color get inversePrimary => const Color(0xff643696);
 }
 
 class AppDarkColors extends AppColors {
   @override
   // Color get primary => const Color(0xffF37421); // same as light
-  Color get primary => const Color(0xffFF6200);
+  Color get primary => const Color(0xff2BAEFF);
 
   @override
   Color get onPrimary => const Color(0xffFFFFFF); // white on primary
 
   @override
   // Color get secondary => const Color(0xffFAA51A); // same as light
-  Color get secondary => const Color(0xffFF6200);
+  Color get secondary => const Color(0xff2BAEFF);
 
   @override
   Color get onSecondary => const Color(0xffFFFFFF); // white on dark backgrounds
@@ -88,7 +92,7 @@ class AppDarkColors extends AppColors {
   Color get captionLight => const Color(0xff192B4C); // dark background for light text
 
   @override
-  Color get captionHint => const Color(0xffA0A0A0); // subtle hint on dark
+  Color get captionHint => const Color(0xffF2F2F2); // subtle hint on dark
 
   @override
   Color get error => const Color(0xffFF4D4C); // keep red consistent
@@ -103,5 +107,8 @@ class AppDarkColors extends AppColors {
   Color get text => const Color(0xffFFFFFF); // main text color
 
   @override
-  Color get success => const Color(0xff00A037); // consistent green
+  Color get success => const Color(0xff00A037);
+
+  @override
+  Color get inversePrimary => const Color(0xff643696);
 }

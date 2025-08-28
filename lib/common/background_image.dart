@@ -14,8 +14,9 @@ class BackgroundImage extends StatelessWidget {
       children: [
         Image.asset(
           Get.isDarkMode
-              ? ImageConstants.imageBackGroundDark
-              : ImageConstants.imageBackGroundLight,
+              ? ImageConstants.imageLoginBackgroundDark
+              // : ImageConstants.imageLoginBackgroundDark,
+              : ImageConstants.imageLoginBackgroundLight,
           fit: BoxFit.cover,
           width: double.infinity,
           height: double.infinity,

@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
 import 'package:loader_overlay/loader_overlay.dart';
+import 'package:truck/theme/theme_data.dart';
 import 'app/routes/app_pages.dart';
+import 'language/language_translations.dart';
+
+// final isEN = 'fr'.obs;
+final isEN = 'en'.obs;
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,7 +31,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
-      statusBarIconBrightness:
+      // statusBarIconBrightness:
       // UserDataSingleTon.instance.statusBarIconBrightness.value,
       // statusBarBrightness: UserDataSingleTon.instance.statusBarBrightness.value,
     ));
@@ -36,20 +42,22 @@ class MyApp extends StatelessWidget {
           child: Padding(
             padding: EdgeInsets.all(8.0),
             child: SpinKitFadingCircle(
-              color: Color(0xffFF6200),
+              color: Color(0xff1F8BE6),
               size: 50.0,
             ),
           ),
         );
       },
       child: GetMaterialApp(
-        title: "Profinderr Biz",
+        title: "Truck",
+        translations: LanguageTranslations(),
+        locale: const Locale("en", "US"),
         initialRoute: AppPages.INITIAL,
         getPages: AppPages.routes,
         themeMode: themeMode,
         debugShowCheckedModeBanner: false,
-        theme: AppThemeData.themeData(fontFamily: 'Poppins'),
-        darkTheme: AppThemeData.themeData(fontFamily: 'Poppins', lightTheme: false),
+        theme: AppThemeData.themeData(fontFamily: 'Raleway'),
+        darkTheme: AppThemeData.themeData(fontFamily: 'Raleway', lightTheme: false),
       ),
     );
   }

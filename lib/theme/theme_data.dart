@@ -58,6 +58,8 @@ class Methods {
       surface: colors.caption,
       onSurface: colors.captionHint,
       onSecondaryContainer: colors.captionLight,
+      inversePrimary: colors.inversePrimary,
+      onPrimaryContainer: colors.text,
     );
   }
 

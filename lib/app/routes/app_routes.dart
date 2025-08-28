@@ -21,6 +21,7 @@ abstract class Routes {
   static const TERMS_AND_CONDITIONS = _Paths.TERMS_AND_CONDITIONS;
   static const SUPPORT = _Paths.SUPPORT;
   static const FAQ = _Paths.FAQ;
+  static const NOTIFICATION = _Paths.NOTIFICATION;
 }
 
 abstract class _Paths {
@@ -43,4 +44,5 @@ abstract class _Paths {
   static const TERMS_AND_CONDITIONS = '/terms-and-conditions';
   static const SUPPORT = '/support';
   static const FAQ = '/faq';
+  static const NOTIFICATION = '/notification';
 }
