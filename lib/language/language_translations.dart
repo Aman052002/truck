@@ -140,6 +140,12 @@ class LanguageTranslations extends Translations {
       StringConstants.logOut: StringConstants.logOut,
       StringConstants.logOutDetails: StringConstants.logOutDetails,
       StringConstants.notifications: StringConstants.notifications,
+
+
+      StringConstants.book: StringConstants.book,
+      StringConstants.available: StringConstants.available,
+      StringConstants.yearsExperienceSedanSUV: StringConstants.yearsExperienceSedanSUV,
+      StringConstants.michaelJohnson: StringConstants.michaelJohnson,
     },
 
     "hi_IN": {
@@ -277,6 +283,11 @@ class LanguageTranslations extends Translations {
       StringConstants.logOut: "लॉग आउट",
       StringConstants.logOutDetails: "क्या आप वाकई लॉग आउट करना चाहते हैं?",
       StringConstants.notifications: "सूचनाएं",
+
+      StringConstants.book: "बुक करें",
+      StringConstants.available: "उपलब्ध",
+      StringConstants.yearsExperienceSedanSUV: "5 साल का अनुभव • सेडान, एसयूवी",
+      StringConstants.michaelJohnson: "माइकल जॉनसन",
     },
 
     "fr_FR": {
@@ -416,6 +427,11 @@ class LanguageTranslations extends Translations {
       StringConstants.logOut: "Se déconnecter",
       StringConstants.logOutDetails: "Êtes-vous sûr de vouloir vous déconnecter ?",
       StringConstants.notifications: "Notifications",
+
+      StringConstants.book: "Réserver",
+      StringConstants.available: "Disponible",
+      StringConstants.yearsExperienceSedanSUV: "5 ans d’expérience • Berline, SUV",
+      StringConstants.michaelJohnson: "Michael Johnson",
     },
 
   };

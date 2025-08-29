@@ -7,6 +7,7 @@ import 'package:truck/common/cw.dart';
 import 'package:truck/constants/icons_constant.dart';
 import '../../../../common/background_image.dart';
 import '../../../../language/string_constants.dart';
+import '../../../routes/app_pages.dart';
 import '../controllers/home_controller.dart';
 import '../home_ui_view/drawer_view.dart';
 import '../home_ui_view/progress_card_view.dart';
@@ -100,8 +101,8 @@ class HomeView extends GetView<HomeController> {
         ),
         CommonWidgets.backIconBtnView(
           iconPath: IconConstantsSvg.icNotification,
-          onTap: controller.clickOnChangeLanguage,
-          // onTap: () => Get.toNamed(Routes.NOTIFICATION),
+          // onTap: controller.clickOnChangeLanguage,
+          onTap: () => Get.toNamed(Routes.NOTIFICATION),
         ),
       ],
     );

@@ -34,4 +34,6 @@ class IconConstantsSvg {
   static const String icEmail = 'assets/icons/icEmail.svg';
   static const String icEdit = 'assets/icons/icEdit.svg';
 
+  static const String icBook = 'assets/icons/icBook.svg';
+
 }

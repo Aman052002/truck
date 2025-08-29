@@ -125,8 +125,6 @@ class StringConstants {
   static const String maintenance = "Maintenance";
 
 
-  ///TODO New
-
 
   static const String save = "Save";
   static const String notifications = "Notifications";
@@ -147,6 +145,14 @@ class StringConstants {
   static const String exit = 'Exit';
   static const String logOut = 'Log Out';
   static const String logOutDetails = 'Are you sure you want to log out?';
+
+
+  ///TODO New
+
+  static const String book = 'Book';
+  static const String available = 'Available';
+  static const String yearsExperienceSedanSUV = '5 years experience • Sedan, SUV';
+  static const String michaelJohnson = 'Michael Johnson';
 
 
 }
