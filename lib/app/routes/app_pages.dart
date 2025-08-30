@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/book_truck/bindings/book_truck_binding.dart';
+import '../modules/book_truck/views/book_truck_view.dart';
 import '../modules/bottom_bar/bindings/bottom_bar_binding.dart';
 import '../modules/bottom_bar/views/bottom_bar_view.dart';
 import '../modules/change_password/bindings/change_password_binding.dart';
@@ -8,6 +10,8 @@ import '../modules/drivers/bindings/drivers_binding.dart';
 import '../modules/drivers/views/drivers_view.dart';
 import '../modules/edit_profile/bindings/edit_profile_binding.dart';
 import '../modules/edit_profile/views/edit_profile_view.dart';
+import '../modules/expense/bindings/expense_binding.dart';
+import '../modules/expense/views/expense_view.dart';
 import '../modules/faq/bindings/faq_binding.dart';
 import '../modules/faq/views/faq_view.dart';
 import '../modules/feedback/bindings/feedback_binding.dart';
@@ -36,6 +40,8 @@ import '../modules/support/bindings/support_binding.dart';
 import '../modules/support/views/support_view.dart';
 import '../modules/terms_and_conditions/bindings/terms_and_conditions_binding.dart';
 import '../modules/terms_and_conditions/views/terms_and_conditions_view.dart';
+import '../modules/trip_management/bindings/trip_management_binding.dart';
+import '../modules/trip_management/views/trip_management_view.dart';
 import '../modules/trucks/bindings/trucks_binding.dart';
 import '../modules/trucks/views/trucks_view.dart';
 
@@ -141,6 +147,21 @@ class AppPages {
       name: _Paths.NOTIFICATION,
       page: () => const NotificationView(),
       binding: NotificationBinding(),
+    ),
+    GetPage(
+      name: _Paths.BOOK_TRUCK,
+      page: () => const BookTruckView(),
+      binding: BookTruckBinding(),
+    ),
+    GetPage(
+      name: _Paths.EXPENSE,
+      page: () => const ExpenseView(),
+      binding: ExpenseBinding(),
+    ),
+    GetPage(
+      name: _Paths.TRIP_MANAGEMENT,
+      page: () => const TripManagementView(),
+      binding: TripManagementBinding(),
     ),
   ];
 }

@@ -1,9 +1,12 @@
 import 'package:get/get.dart';
+import 'package:truck/app/routes/app_pages.dart';
 
 class TrucksController extends GetxController {
-  //TODO: Implement TrucksController
 
-  final count = 0.obs;
+  final RxnString selectedFilterValue = RxnString('All');
+
+  List<String> filterList = ['All','Available','On Trip','Maintenance'];
+
   @override
   void onInit() {
     super.onInit();
@@ -19,5 +22,8 @@ class TrucksController extends GetxController {
     super.onClose();
   }
 
-  void increment() => count.value++;
+  void clickOnBookTruckBtn() {
+    Get.toNamed(Routes.BOOK_TRUCK);
+  }
+
 }

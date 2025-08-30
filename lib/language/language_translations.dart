@@ -141,11 +141,49 @@ class LanguageTranslations extends Translations {
       StringConstants.logOutDetails: StringConstants.logOutDetails,
       StringConstants.notifications: StringConstants.notifications,
 
-
       StringConstants.book: StringConstants.book,
       StringConstants.available: StringConstants.available,
       StringConstants.yearsExperienceSedanSUV: StringConstants.yearsExperienceSedanSUV,
       StringConstants.michaelJohnson: StringConstants.michaelJohnson,
+
+
+
+      StringConstants.searchByTruckIdOrPlate: StringConstants.searchByTruckIdOrPlate,
+      StringConstants.truckId: StringConstants.truckId,
+      StringConstants.truckModel: StringConstants.truckModel,
+      StringConstants.lastTrip: StringConstants.lastTrip,
+      StringConstants.lastTripDate: StringConstants.lastTripDate,
+      StringConstants.mileage: StringConstants.mileage,
+      StringConstants.mileageValue: StringConstants.mileageValue,
+      StringConstants.viewDetails: StringConstants.viewDetails,
+      StringConstants.bookTruck: StringConstants.bookTruck,
+
+      StringConstants.optional: StringConstants.optional,
+      StringConstants.tripDateTime: StringConstants.tripDateTime,
+      StringConstants.dateTime: StringConstants.dateTime,
+      StringConstants.selectDateTime: StringConstants.selectDateTime,
+      StringConstants.selectClient: StringConstants.selectClient,
+      StringConstants.chooseClient: StringConstants.chooseClient,
+      StringConstants.client1: StringConstants.client1,
+      StringConstants.client2: StringConstants.client2,
+      StringConstants.autoAssignDriver: StringConstants.autoAssignDriver,
+      StringConstants.selectDriver: StringConstants.selectDriver,
+      StringConstants.chooseDriver: StringConstants.chooseDriver,
+      StringConstants.driver1: StringConstants.driver1,
+      StringConstants.driver2: StringConstants.driver2,
+      StringConstants.tripStartLocation: StringConstants.tripStartLocation,
+      StringConstants.enterPickupLocation: StringConstants.enterPickupLocation,
+      StringConstants.useCurrentLocation: StringConstants.useCurrentLocation,
+      StringConstants.notes: StringConstants.notes,
+      StringConstants.addNotes: StringConstants.addNotes,
+      StringConstants.confirmBooking: StringConstants.confirmBooking,
+
+      StringConstants.addExpense: StringConstants.addExpense,
+      StringConstants.expensesList: StringConstants.expensesList,
+      StringConstants.tripManagement: StringConstants.tripManagement,
+      StringConstants.fuel: StringConstants.fuel,
+      StringConstants.tripDowntownToAirport: StringConstants.tripDowntownToAirport,
+      StringConstants.totalExpensesThisWeek: StringConstants.totalExpensesThisWeek,
     },
 
     "hi_IN": {
@@ -241,7 +279,7 @@ class LanguageTranslations extends Translations {
 
       StringConstants.monthlyProgress: "मासिक प्रगति",
       StringConstants.salaryProgress: "वेतन प्रगति",
-      StringConstants.salaryProgressValue: "\$3,400 / \$4,600", // fixed value, no translation
+      StringConstants.salaryProgressValue: "\$3,400 / \$4,600",
       StringConstants.tripsRemaining: "मासिक लक्ष्य तक पहुँचने के लिए 17 यात्राएँ शेष",
 
       StringConstants.nextTrip: "अगली यात्रा",
@@ -288,6 +326,45 @@ class LanguageTranslations extends Translations {
       StringConstants.available: "उपलब्ध",
       StringConstants.yearsExperienceSedanSUV: "5 साल का अनुभव • सेडान, एसयूवी",
       StringConstants.michaelJohnson: "माइकल जॉनसन",
+
+
+
+      StringConstants.searchByTruckIdOrPlate: "ट्रक आईडी या प्लेट से खोजें",
+      StringConstants.truckId: "TRK-001",
+      StringConstants.truckModel: "मर्सिडीज़ एक्टर्स 2545",
+      StringConstants.lastTrip: "पिछली यात्रा",
+      StringConstants.lastTripDate: "15 दिसम्बर, 2024",
+      StringConstants.mileage: "माइलेज",
+      StringConstants.mileageValue: "145,230 किमी",
+      StringConstants.viewDetails: "विवरण देखें",
+      StringConstants.bookTruck: "ट्रक बुक करें",
+
+      StringConstants.optional: "वैकल्पिक",
+      StringConstants.tripDateTime: "यात्रा की तिथि और समय",
+      StringConstants.dateTime: "तिथि/समय",
+      StringConstants.selectDateTime: "तिथि/समय चुनें",
+      StringConstants.selectClient: "क्लाइंट चुनें",
+      StringConstants.chooseClient: "किसी क्लाइंट का चयन करें...",
+      StringConstants.client1: "क्लाइंट 1",
+      StringConstants.client2: "क्लाइंट 2",
+      StringConstants.autoAssignDriver: "ड्राइवर को स्वतः असाइन करें",
+      StringConstants.selectDriver: "ड्राइवर चुनें",
+      StringConstants.chooseDriver: "या विशिष्ट ड्राइवर चुनें...",
+      StringConstants.driver1: "ड्राइवर 1",
+      StringConstants.driver2: "ड्राइवर 2",
+      StringConstants.tripStartLocation: "यात्रा प्रारंभ स्थान",
+      StringConstants.enterPickupLocation: "पिकअप पता या स्थान विवरण दर्ज करें...",
+      StringConstants.useCurrentLocation: "वर्तमान स्थान का उपयोग करें",
+      StringConstants.notes: "नोट्स",
+      StringConstants.addNotes: "इस यात्रा के लिए कोई विशेष निर्देश, आवश्यकताएँ या नोट्स जोड़ें...",
+      StringConstants.confirmBooking: "बुकिंग की पुष्टि करें",
+
+      StringConstants.addExpense: "खर्च जोड़ें",
+      StringConstants.expensesList: "खर्चों की सूची",
+      StringConstants.tripManagement: "यात्रा प्रबंधन",
+      StringConstants.fuel: "ईंधन",
+      StringConstants.tripDowntownToAirport: "यात्रा: डाउनटाउन से हवाई अड्डा",
+      StringConstants.totalExpensesThisWeek: "इस सप्ताह के कुल खर्च",
     },
 
     "fr_FR": {
@@ -385,7 +462,7 @@ class LanguageTranslations extends Translations {
 
       StringConstants.monthlyProgress: "Progrès mensuel",
       StringConstants.salaryProgress: "Progrès du salaire",
-      StringConstants.salaryProgressValue: "\$3,400 / \$4,600", // valeur fixe
+      StringConstants.salaryProgressValue: "\$3,400 / \$4,600",
       StringConstants.tripsRemaining: "17 trajets restants pour atteindre l’objectif mensuel",
 
       StringConstants.nextTrip: "Prochain trajet",
@@ -432,6 +509,45 @@ class LanguageTranslations extends Translations {
       StringConstants.available: "Disponible",
       StringConstants.yearsExperienceSedanSUV: "5 ans d’expérience • Berline, SUV",
       StringConstants.michaelJohnson: "Michael Johnson",
+
+
+
+      StringConstants.searchByTruckIdOrPlate: "Rechercher par ID ou plaque du camion",
+      StringConstants.truckId: "TRK-001",
+      StringConstants.truckModel: "Mercedes Actros 2545",
+      StringConstants.lastTrip: "Dernier trajet",
+      StringConstants.lastTripDate: "15 déc. 2024",
+      StringConstants.mileage: "Kilométrage",
+      StringConstants.mileageValue: "145 230 km",
+      StringConstants.viewDetails: "Voir les détails",
+      StringConstants.bookTruck: "Réserver un camion",
+
+      StringConstants.optional: "Optionnel",
+      StringConstants.tripDateTime: "Date et heure du trajet",
+      StringConstants.dateTime: "Date/Heure",
+      StringConstants.selectDateTime: "Sélectionner date/heure",
+      StringConstants.selectClient: "Sélectionner client",
+      StringConstants.chooseClient: "Choisir un client...",
+      StringConstants.client1: "Client 1",
+      StringConstants.client2: "Client 2",
+      StringConstants.autoAssignDriver: "Attribuer un chauffeur automatiquement",
+      StringConstants.selectDriver: "Sélectionner chauffeur",
+      StringConstants.chooseDriver: "Ou choisir un chauffeur spécifique...",
+      StringConstants.driver1: "Chauffeur 1",
+      StringConstants.driver2: "Chauffeur 2",
+      StringConstants.tripStartLocation: "Lieu de départ du trajet",
+      StringConstants.enterPickupLocation: "Entrez l’adresse ou les détails du lieu de prise en charge...",
+      StringConstants.useCurrentLocation: "Utiliser la position actuelle",
+      StringConstants.notes: "Remarques",
+      StringConstants.addNotes: "Ajoutez des instructions, exigences ou notes pour ce trajet...",
+      StringConstants.confirmBooking: "Confirmer la réservation",
+
+      StringConstants.addExpense: "Ajouter une dépense",
+      StringConstants.expensesList: "Liste des dépenses",
+      StringConstants.tripManagement: "Gestion des trajets",
+      StringConstants.fuel: "Carburant",
+      StringConstants.tripDowntownToAirport: "Trajet : centre-ville à l’aéroport",
+      StringConstants.totalExpensesThisWeek: "Dépenses totales cette semaine",
     },
 
   };

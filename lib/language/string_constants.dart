@@ -146,13 +146,49 @@ class StringConstants {
   static const String logOut = 'Log Out';
   static const String logOutDetails = 'Are you sure you want to log out?';
 
-
-  ///TODO New
-
   static const String book = 'Book';
   static const String available = 'Available';
   static const String yearsExperienceSedanSUV = '5 years experience • Sedan, SUV';
   static const String michaelJohnson = 'Michael Johnson';
 
+
+  ///TODO New
+
+  static const String searchByTruckIdOrPlate = "Search by truck ID or plate";
+  static const String truckId = "TRK-001";
+  static const String truckModel = "Mercedes Actors 2545";
+  static const String lastTrip = "Last Trip";
+  static const String lastTripDate = "Dec 15, 2024";
+  static const String mileage = "Mileage";
+  static const String mileageValue = "145,230 km";
+  static const String viewDetails = "View Details";
+  static const String bookTruck = "Book Truck";
+
+  static const optional = "Optional";
+  static const tripDateTime = "Trip Date & Time";
+  static const dateTime = "Date/Time";
+  static const selectDateTime = "Select Date/Time";
+  static const selectClient = "Select Client";
+  static const chooseClient = "Choose a client...";
+  static const client1 = "Client 1";
+  static const client2 = "Client 2";
+  static const autoAssignDriver = "Auto-assign driver";
+  static const selectDriver = "Select Driver";
+  static const chooseDriver = "Or choose specific driver...";
+  static const driver1 = "Driver 1";
+  static const driver2 = "Driver 2";
+  static const tripStartLocation = "Trip Start Location";
+  static const enterPickupLocation = "Enter pickup address or location details...";
+  static const useCurrentLocation = "Use current location";
+  static const notes = "Notes";
+  static const addNotes = "Add any special instructions, requirements, or notes for this trip...";
+  static const confirmBooking = "Confirm Booking";
+
+  static const addExpense = "Add Expense";
+  static const expensesList = "Expenses List";
+  static const tripManagement = "Trip Management";
+  static const fuel = "Fuel";
+  static const tripDowntownToAirport = 'Trip: Downtown to Airport';
+  static const totalExpensesThisWeek = 'Total Expenses This Week';
 
 }

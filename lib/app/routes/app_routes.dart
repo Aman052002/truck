@@ -22,6 +22,9 @@ abstract class Routes {
   static const SUPPORT = _Paths.SUPPORT;
   static const FAQ = _Paths.FAQ;
   static const NOTIFICATION = _Paths.NOTIFICATION;
+  static const BOOK_TRUCK = _Paths.BOOK_TRUCK;
+  static const EXPENSE = _Paths.EXPENSE;
+  static const TRIP_MANAGEMENT = _Paths.TRIP_MANAGEMENT;
 }
 
 abstract class _Paths {
@@ -45,4 +48,7 @@ abstract class _Paths {
   static const SUPPORT = '/support';
   static const FAQ = '/faq';
   static const NOTIFICATION = '/notification';
+  static const BOOK_TRUCK = '/book-truck';
+  static const EXPENSE = '/expense';
+  static const TRIP_MANAGEMENT = '/trip-management';
 }

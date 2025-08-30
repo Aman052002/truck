@@ -19,26 +19,6 @@ class HomeController extends GetxController {
   final isPassword = false.obs;
   final isPasswordShow = true.obs;
 
-  List<Map<String, String>> listOfCards =[
-    {
-      "icon": IconConstantsSvg.icNewTrip,
-      "title": StringConstants.newTrip.tr,
-    },
-    {
-      "icon": IconConstantsSvg.icMyTrips,
-      "title": StringConstants.myTrips.tr,
-    },
-    {
-      "icon": IconConstantsSvg.icExpenses,
-      "title": StringConstants.expenses.tr,
-    },
-    {
-      "icon": IconConstantsSvg.icMaintenance,
-      "title": StringConstants.maintenance.tr,
-    }
-  ];
-
-
   @override
   void onInit() {
     super.onInit();

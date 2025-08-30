@@ -36,4 +36,8 @@ class IconConstantsSvg {
 
   static const String icBook = 'assets/icons/icBook.svg';
 
+  static const String icSearch = 'assets/icons/icSearch.svg';
+  static const String icCalendar = 'assets/icons/icCalendar.svg';
+  static const String icMagic = 'assets/icons/icMagic.svg';
+
 }
