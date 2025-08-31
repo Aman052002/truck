@@ -39,5 +39,15 @@ class IconConstantsSvg {
   static const String icSearch = 'assets/icons/icSearch.svg';
   static const String icCalendar = 'assets/icons/icCalendar.svg';
   static const String icMagic = 'assets/icons/icMagic.svg';
+  static const String icToll = 'assets/icons/icToll.svg';
+  static const String icRepair = 'assets/icons/icRepair.svg';
+  static const String icAdd = 'assets/icons/icAdd.svg';
+  static const String icFuel = 'assets/icons/icFuel.svg';
+  static const String icDollar = 'assets/icons/icDollar.svg';
+  static const String icCamera = 'assets/icons/icCamera.svg';
+  static const String icKM = 'assets/icons/icKM.svg';
+  static const String icDeparture = 'assets/icons/icDeparture.svg';
+  static const String icArrival = 'assets/icons/icArrival.svg';
+  static const String icUnloading = 'assets/icons/icUnloading.svg';
 
 }

@@ -60,6 +60,7 @@ class TrucksView extends GetView<TrucksController> {
                                   height: 16.px,
                                   width: 16.px,
                                 ),
+                                textInputAction: TextInputAction.search,
                                 hintText: StringConstants.searchByTruckIdOrPlate.tr,
                               ),
                             ),

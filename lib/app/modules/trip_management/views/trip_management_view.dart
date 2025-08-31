@@ -58,7 +58,7 @@ class TripManagementView extends GetView<TripManagementController> {
         children: List.generate(list.length, (index) {
           return Expanded(
             child: GestureDetector(
-              // onTap: () => controller.tabBarSelectedValue.value = list[index],
+              onTap: () => controller.tabBarSelectedValue.value = list[index],
               child: Container(
                 padding: EdgeInsets.symmetric(vertical: 12.px),
                 decoration: BoxDecoration(
@@ -101,7 +101,16 @@ class TripManagementView extends GetView<TripManagementController> {
     return Obx(
           () =>
       controller.tabBarSelectedValue.value == StringConstants.newTrip.tr
-          ? SizedBox()
+          ? FloatingActionButton(
+        onPressed: () => controller.tabBarSelectedValue.value = StringConstants.newTrip.tr,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(40.px),
+        ),
+        child: Icon(
+          Icons.add,
+          color: Theme.of(Get.context!).colorScheme.onPrimary,
+        ),
+      )
           : FloatingActionButton(
         onPressed: () => controller.tabBarSelectedValue.value = StringConstants.newTrip.tr,
         shape: RoundedRectangleBorder(

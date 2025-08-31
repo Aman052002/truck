@@ -152,8 +152,6 @@ class StringConstants {
   static const String michaelJohnson = 'Michael Johnson';
 
 
-  ///TODO New
-
   static const String searchByTruckIdOrPlate = "Search by truck ID or plate";
   static const String truckId = "TRK-001";
   static const String truckModel = "Mercedes Actors 2545";
@@ -190,5 +188,72 @@ class StringConstants {
   static const fuel = "Fuel";
   static const tripDowntownToAirport = 'Trip: Downtown to Airport';
   static const totalExpensesThisWeek = 'Total Expenses This Week';
+
+
+  ///TODO New
+
+
+  static const String addNewExpense = "Add New Expense";
+  static const String expenseType = "Expense Type";
+  static const String toll = "Toll";
+  static const String repair = "Repair";
+  static const String other = "Other";
+  static const String amount = "Amount";
+  static const String zeroAmount = "0.00";
+  static const String linkToTrip = "Link to Trip (Optional)";
+  static const String selectTrip = "Select a trip";
+  static const String trip1 = "Trip 1";
+  static const String trip2 = "Trip 2";
+  static const String notesHint = "Add any additional details...";
+  static const String receiptPhoto = "Receipt Photo (Optional)";
+  static const String tapToAddReceipt = "Tap to add receipt photo";
+  static const String chooseFromGallery = "Choose from gallery";
+  static const String saveExpense = "Save Expense";
+
+
+  static const String searchTrips = "Search trips...";
+  static const String totalTrips = "Total Trips";
+  static const String totalTripsCount = "24";
+  static const String totalDistance = "Total Distance";
+  static const String totalDistanceValue = "1,247 km";
+  static const String pendingSync = "Pending Sync";
+  static const String pendingSyncCount = "3";
+  static const String companyName = "Acme Corporation";
+  static const String synced = "Synced";
+  static const String tripTime = "Today, 2:30 PM";
+  static const String tripDistance = "45.2 km";
+
+
+  static const tripSetup = "Trip Setup";
+
+  static const selectTruck = "Select Truck";
+  static const chooseTruck = "Choose a truck...";
+  static const truck1 = "Truck 1";
+  static const truck2 = "Truck 2";
+
+  static const tripDate = "Trip Date";
+  static const selectTripDate = "Select trip date...";
+
+  static const departure = "Departure";
+  static const departureTime = "Departure Time";
+  static const selectDepartureTime = "Select departure time...";
+
+  static const gpsCoordinates = "GPS Coordinates";
+  static const enterHere = "Enter here...";
+
+  static const kmToDestination = "Km to Destination";
+  static const enterDistanceInKm = "Enter distance in km";
+
+  static const arrivalAtUnloading = "Arrival at Unloading Point";
+  static const arrivalTime = "Arrival Time";
+  static const selectArrivalTime = "Select arrival time...";
+  static const markArrival = "Mark Arrival";
+
+  static const unloading = "Unloading";
+  static const startTime = "Start Time";
+  static const endTimeOptional = "End Time (Optional)";
+  static const timePlaceholder = "00:00";
+
+  static const waitingTimeAuto = "Waiting Time: 2h 15m (Auto-calculated)";
 
 }

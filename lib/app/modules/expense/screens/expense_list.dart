@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:truck/app/modules/expense/controllers/expense_controller.dart';
+import 'package:truck/common/cm.dart';
+import 'package:truck/constants/icons_constant.dart';
 
 import '../../../../language/string_constants.dart';
 
@@ -38,6 +40,14 @@ class ExpenseList extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: Theme.of(context).primaryColor.withAlpha(60),
                     borderRadius: BorderRadius.circular(8.px),
+                  ),
+                  child: Center(
+                    child: CommonMethods.appIcons(
+                      assetName: IconConstantsSvg.icFuel,
+                      height: 18.px,
+                      width: 18.px,
+                      color: Theme.of(context).primaryColor,
+                    ),
                   ),
                 ),
                 Expanded(
