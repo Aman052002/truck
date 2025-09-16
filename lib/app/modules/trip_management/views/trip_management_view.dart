@@ -98,20 +98,10 @@ class TripManagementView extends GetView<TripManagementController> {
   }
 
   Widget addBtnView() {
-    return Obx(
-          () =>
-      controller.tabBarSelectedValue.value == StringConstants.newTrip.tr
-          ? FloatingActionButton(
-        onPressed: () => controller.tabBarSelectedValue.value = StringConstants.newTrip.tr,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(40.px),
-        ),
-        child: Icon(
-          Icons.add,
-          color: Theme.of(Get.context!).colorScheme.onPrimary,
-        ),
-      )
-          : FloatingActionButton(
+    return Obx(() =>
+    controller.tabBarSelectedValue.value == StringConstants.newTrip.tr
+        ? SizedBox()
+        : FloatingActionButton(
         onPressed: () => controller.tabBarSelectedValue.value = StringConstants.newTrip.tr,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(40.px),

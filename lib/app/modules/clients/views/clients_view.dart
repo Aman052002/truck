@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
+
 import 'package:get/get.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
+
 import '../../../../common/background_image.dart';
 import '../../../../common/cm.dart';
 import '../../../../common/cw.dart';
 import '../../../../constants/icons_constant.dart';
 import '../../../../language/string_constants.dart';
-import '../controllers/reports_controller.dart';
+import '../../../routes/app_pages.dart';
+import '../controllers/clients_controller.dart';
 
-class ReportsView extends GetView<ReportsController> {
-  const ReportsView({super.key});
-
+class ClientsView extends GetView<ClientsController> {
+  const ClientsView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +23,7 @@ class ReportsView extends GetView<ReportsController> {
             child: Column(
               children: [
                 SizedBox(height: 6.px),
-                CommonWidgets.appBarView(title: StringConstants.reports.tr),
+                CommonWidgets.appBarView(title: StringConstants.clients.tr),
                 Divider(
                   thickness: 1.px,
                   color: Theme.of(context).colorScheme.surface.withAlpha(40),
@@ -60,7 +62,7 @@ class ReportsView extends GetView<ReportsController> {
                                 ),
                                 child: Center(
                                   child: CommonMethods.appIcons(
-                                    assetName: IconConstantsSvg.icFuel,
+                                    assetName: IconConstantsSvg.icPerson,
                                     height: 18.px,
                                     width: 18.px,
                                     color: Theme.of(context).primaryColor,
@@ -75,7 +77,7 @@ class ReportsView extends GetView<ReportsController> {
                                       children: [
                                         Expanded(
                                           child: Text(
-                                            StringConstants.fuel.tr,
+                                            "John Doe Constructions",
                                             style: Theme.of(Get.context!).textTheme.titleMedium?.copyWith(
                                               fontWeight: FontWeight.w600,
                                               color: Theme.of(Get.context!).colorScheme.onPrimaryContainer,
@@ -84,7 +86,7 @@ class ReportsView extends GetView<ReportsController> {
                                           ),
                                         ),
                                         Text(
-                                          '\$45.20',
+                                          "₹2,45,000",
                                           style: Theme.of(Get.context!).textTheme.titleMedium?.copyWith(
                                             fontWeight: FontWeight.w700,
                                             color: Theme.of(Get.context!).colorScheme.onPrimaryContainer,
@@ -93,36 +95,30 @@ class ReportsView extends GetView<ReportsController> {
                                         ),
                                       ],
                                     ),
+                                    // Last trip info
                                     Text(
-                                      'Today, 3:45 PM',
+                                      "${StringConstants.lastTrip.tr}: Today, 3:45 PM",
                                       style: Theme.of(Get.context!).textTheme.titleMedium?.copyWith(
                                         fontWeight: FontWeight.w500,
                                         color: Theme.of(Get.context!).colorScheme.surface,
                                         fontSize: 14.px,
                                       ),
                                     ),
-                                    Row(
-                                      children: [
-                                        Expanded(
-                                          child: Text(
-                                            StringConstants.tripDowntownToAirport.tr,
-                                            style: Theme.of(Get.context!).textTheme.titleMedium?.copyWith(
-                                              fontWeight: FontWeight.w500,
-                                              color: Theme.of(Get.context!).colorScheme.primary,
-                                              fontSize: 12.px,
-                                            ),
-                                          ),
-                                        ),
-                                        Icon(Icons.download),
-                                      ],
+                                    // Extra info
+                                    Text(
+                                      "${StringConstants.trips.tr}: 56 | ${StringConstants.contacts.tr}: +91 98765 43210", // 👈 info line
+                                      style: Theme.of(Get.context!).textTheme.titleMedium?.copyWith(
+                                        fontWeight: FontWeight.w500,
+                                        color: Theme.of(Get.context!).colorScheme.primary,
+                                        fontSize: 12.px,
+                                      ),
                                     ),
                                   ],
                                 ),
                               ),
                             ],
                           ),
-                        ).paddingOnly(bottom: 10.px),
-                        ),
+                        ).paddingOnly(bottom: 10.px)),
                       ),
                     ],
                   ),
@@ -132,6 +128,21 @@ class ReportsView extends GetView<ReportsController> {
           ),
         ),
       ),
+      floatingActionButton: addBtnView(),
     );
   }
+
+  Widget addBtnView() {
+    return FloatingActionButton(
+      onPressed: ()=> Get.toNamed(Routes.ADD_CLIENT),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(40.px),
+      ),
+      child: Icon(
+        Icons.add,
+        color: Theme.of(Get.context!).colorScheme.onPrimary,
+      ),
+    );
+  }
+
 }

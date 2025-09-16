@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:truck/app/modules/clients/views/clients_view.dart';
 import 'package:truck/app/modules/drivers/views/drivers_view.dart';
 import 'package:truck/app/modules/home/views/home_view.dart';
-import 'package:truck/app/modules/reports/views/reports_view.dart';
 import 'package:truck/app/modules/trucks/views/trucks_view.dart';
 import '../../../../common/cm.dart';
 import '../../../../constants/icons_constant.dart';
@@ -20,7 +20,7 @@ class BottomBarView extends GetView<BottomBarController> {
         body: Obx(
           () => IndexedStack(
             index: controller.activeIndex.value,
-            children: [HomeView(), TrucksView(), DriversView(), ReportsView()],
+            children: [HomeView(), TrucksView(), DriversView(), ClientsView()],
           ),
         ),
         bottomNavigationBar: Container(
@@ -100,8 +100,8 @@ class BottomBarView extends GetView<BottomBarController> {
         index: 2,
       ),
       button(
-        image: IconConstantsSvg.icReports,
-        text: StringConstants.reports.tr,
+        image: IconConstantsSvg.icPerson,
+        text: StringConstants.clients.tr,
         index: 3,
       ),
     ];

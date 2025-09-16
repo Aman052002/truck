@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -14,80 +17,143 @@ class QuickActionGridView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var list = [
-      {
-        "icon": IconConstantsSvg.icNewTrip,
-        "title": StringConstants.newTrip.tr,
-      },
-      {
-        "icon": IconConstantsSvg.icMyTrips,
-        "title": StringConstants.myTrips.tr,
-      },
-      {
-        "icon": IconConstantsSvg.icExpenses,
-        "title": StringConstants.expenses.tr,
-      },
-      {
-        "icon": IconConstantsSvg.icMaintenance,
-        "title": StringConstants.maintenance.tr,
-      }
-    ];
-    return GridView.builder(
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        mainAxisSpacing: 16.px,
-        crossAxisSpacing: 16.px,
-        childAspectRatio: 1.4,
-      ),
-      shrinkWrap: true,
-      padding: EdgeInsets.symmetric(horizontal: 2.px),
-      physics: NeverScrollableScrollPhysics(),
-      itemCount: list.length,
-      itemBuilder: (context, index) {
-        return GestureDetector(
-          onTap: () {
-            if(index == 0){
-              Get.toNamed(Routes.TRIP_MANAGEMENT,parameters: {'tabValue': StringConstants.newTrip.tr});
-            }
-            else if(index == 1){
-              Get.toNamed(Routes.TRIP_MANAGEMENT,parameters: {'tabValue': StringConstants.myTrips.tr});
-            }
-            else if(index == 2){
-              Get.toNamed(Routes.EXPENSE,parameters: {'tabValue': StringConstants.addExpense.tr});
-            }
-          },
-          child: Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8.px),
-              boxShadow: [
-                BoxShadow(
-                  blurRadius: 1,
-                  offset: Offset(.1, .1),
-                  color: Theme.of(Get.context!).colorScheme.surface.withAlpha(50),
-                ),
-              ],
-              color: Theme.of(Get.context!).scaffoldBackgroundColor,
-            ),
-            child: Column(
-              spacing: 10.px,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                CommonMethods.appIcons(
-                  assetName: list[index]['icon'].toString(),
-                  height: 48.px,
-                  width: 48.px,
-                ),
-                Text(
-                  list[index]['title'].toString(),
-                  style: Theme.of(Get.context!).textTheme.titleMedium?.copyWith(
-                    fontWeight: FontWeight.w600,
-                    color: Theme.of(Get.context!).colorScheme.onPrimaryContainer,
-                    fontSize: 14.px,
-                  ),
-                ),
-              ],
-            ),
+    late final List<Map<String, dynamic>> list;
+
+    if (kIsWeb) {
+      list = [
+        {
+          "icon": IconConstantsSvg.icExpenses,
+          "title": StringConstants.expenses.tr,
+        },
+        {
+          "icon": IconConstantsSvg.icMaintenance,
+          "title": StringConstants.maintenance.tr,
+        },
+        {
+          "icon": IconConstantsSvg.icReports,
+          "title": StringConstants.reports.tr,
+        },
+      ];
+    }
+    else if (Platform.isAndroid || Platform.isIOS) {
+      list = [
+        {
+          "icon": IconConstantsSvg.icNewTrip,
+          "title": StringConstants.newTrip.tr,
+        },
+        {
+          "icon": IconConstantsSvg.icMyTrips,
+          "title": StringConstants.myTrips.tr,
+        },
+      ];
+    }
+    else {
+      list = [
+        {
+          "icon": IconConstantsSvg.icExpenses,
+          "title": StringConstants.expenses.tr,
+        },
+        {
+          "icon": IconConstantsSvg.icMaintenance,
+          "title": StringConstants.maintenance.tr,
+        },
+        {
+          "icon": IconConstantsSvg.icReports,
+          "title": StringConstants.reports.tr,
+        },
+      ];
+    }
+
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        int crossAxisCount = constraints.maxWidth < 600 ? 2 : 4;
+
+        return GridView.builder(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: crossAxisCount,
+            mainAxisSpacing: 16.px,
+            crossAxisSpacing: 16.px,
+            childAspectRatio: 1.4,
           ),
+          shrinkWrap: true,
+          padding: EdgeInsets.symmetric(horizontal: 2.px),
+          physics: NeverScrollableScrollPhysics(),
+          itemCount: list.length,
+          itemBuilder: (context, index) {
+            return GestureDetector(
+                onTap: () {
+                  if (kIsWeb) {
+                    if (index == 0) {
+                      Get.toNamed(Routes.EXPENSE, parameters: {
+                        'tabValue': StringConstants.addExpense.tr,
+                      });
+                    }
+                    else if (index == 1) {
+
+                    }
+                    else if (index == 2) {
+                      Get.toNamed(Routes.REPORTS);
+                    }
+                  }
+                  else if (Platform.isAndroid || Platform.isIOS) {
+                    if (index == 0) {
+                      Get.toNamed(Routes.TRIP_MANAGEMENT, parameters: {
+                        'tabValue': StringConstants.newTrip.tr,
+                      });
+                    } else if (index == 1) {
+                      Get.toNamed(Routes.TRIP_MANAGEMENT, parameters: {
+                        'tabValue': StringConstants.myTrips.tr,
+                      });
+                    }
+                  }
+                  else {
+                    if (index == 0) {
+                      Get.toNamed(Routes.EXPENSE, parameters: {
+                        'tabValue': StringConstants.addExpense.tr,
+                      });
+                    }
+                    else if (index == 1) {
+
+                    }
+                    else if (index == 2) {
+                      Get.toNamed(Routes.REPORTS);
+                    }
+                  }
+                },
+                child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8.px),
+                  boxShadow: [
+                    BoxShadow(
+                      blurRadius: 1,
+                      offset: Offset(.1, .1),
+                      color: Theme.of(Get.context!).colorScheme.surface.withAlpha(50),
+                    ),
+                  ],
+                  color: Theme.of(Get.context!).scaffoldBackgroundColor,
+                ),
+                child: Column(
+                  spacing: 10.px,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CommonMethods.appIcons(
+                      assetName: list[index]['icon'].toString(),
+                      height: 48.px,
+                      width: 48.px,
+                    ),
+                    Text(
+                      list[index]['title'].toString(),
+                      style: Theme.of(Get.context!).textTheme.titleMedium?.copyWith(
+                        fontWeight: FontWeight.w600,
+                        color: Theme.of(Get.context!).colorScheme.onPrimaryContainer,
+                        fontSize: 14.px,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            );
+          },
         );
       },
     );

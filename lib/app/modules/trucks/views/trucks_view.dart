@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
+import 'package:truck/app/routes/app_pages.dart';
 import '../../../../common/background_image.dart';
 import '../../../../common/cm.dart';
 import '../../../../common/cw.dart';
@@ -206,51 +207,50 @@ class TrucksView extends GetView<TrucksController> {
                                   ),
                                 ],
                               ),
-                              SizedBox(height: 8.px),
+                              SizedBox(height: 12.px),
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment: MainAxisAlignment.end,
                                 spacing: 10.px,
                                 children: [
-                                  Expanded(
+                                  // Expanded(
+                                  //   child: Container(
+                                  //     height: 36.px,
+                                  //     decoration: BoxDecoration(
+                                  //       border: Border.all(
+                                  //         color: Theme.of(context).colorScheme.onSurface,
+                                  //         width: 1.5.px,
+                                  //       ),
+                                  //       borderRadius: BorderRadius.circular(8.px),
+                                  //     ),
+                                  //     child: Center(
+                                  //       child: Text(
+                                  //         StringConstants.viewDetails.tr,
+                                  //         style: Theme.of(Get.context!).textTheme.titleMedium?.copyWith(
+                                  //           fontWeight: FontWeight.w600,
+                                  //           color: Theme.of(Get.context!).colorScheme.onPrimaryContainer,
+                                  //           fontSize: 14.px,
+                                  //         ),
+                                  //       ),
+                                  //     ),
+                                  //   ),
+                                  // ),
+                                  GestureDetector(
+                                    onTap: () => controller.clickOnBookTruckBtn(),
                                     child: Container(
                                       height: 36.px,
+                                      width: 200.px,
                                       decoration: BoxDecoration(
-                                        border: Border.all(
-                                          color: Theme.of(context).colorScheme.onSurface,
-                                          width: 1.5.px,
-                                        ),
-                                        borderRadius: BorderRadius.circular(8.px),
+                                        color: Theme.of(context).primaryColor,
+                                        borderRadius:
+                                        BorderRadius.circular(8.px),
                                       ),
                                       child: Center(
                                         child: Text(
-                                          StringConstants.viewDetails.tr,
+                                          StringConstants.bookTruck.tr,
                                           style: Theme.of(Get.context!).textTheme.titleMedium?.copyWith(
                                             fontWeight: FontWeight.w600,
-                                            color: Theme.of(Get.context!).colorScheme.onPrimaryContainer,
+                                            color: Theme.of(Get.context!).colorScheme.onPrimary,
                                             fontSize: 14.px,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  Expanded(
-                                    child: GestureDetector(
-                                      onTap: () => controller.clickOnBookTruckBtn(),
-                                      child: Container(
-                                        height: 36.px,
-                                        decoration: BoxDecoration(
-                                          color: Theme.of(context).primaryColor,
-                                          borderRadius:
-                                          BorderRadius.circular(8.px),
-                                        ),
-                                        child: Center(
-                                          child: Text(
-                                            StringConstants.bookTruck.tr,
-                                            style: Theme.of(Get.context!).textTheme.titleMedium?.copyWith(
-                                              fontWeight: FontWeight.w600,
-                                              color: Theme.of(Get.context!).colorScheme.onPrimary,
-                                              fontSize: 14.px,
-                                            ),
                                           ),
                                         ),
                                       ),
@@ -271,6 +271,22 @@ class TrucksView extends GetView<TrucksController> {
           ),
         ),
       ),
+      floatingActionButton: addBtnView(),
     );
   }
+
+
+  Widget addBtnView() {
+    return FloatingActionButton(
+      onPressed: ()=> Get.toNamed(Routes.ADDTRUCK),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(40.px),
+      ),
+      child: Icon(
+        Icons.add,
+        color: Theme.of(Get.context!).colorScheme.onPrimary,
+      ),
+    );
+  }
+
 }

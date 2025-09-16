@@ -2,9 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:truck/app/routes/app_pages.dart';
-import 'package:truck/constants/icons_constant.dart';
-import 'package:truck/language/string_constants.dart';
-
 import '../../../../dialogs/sign_out_dialog_view.dart';
 import '../../../../language/selected_language.dart';
 import '../../../../main.dart';

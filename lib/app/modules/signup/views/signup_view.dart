@@ -50,110 +50,110 @@ class SignupView extends GetView<SignupController> {
                 ],
               ),
               SizedBox(height: 24.px),
-              fieldTitleTextView(
-               StringConstants.selectAccountType.tr,// 'Select Account Type',
-                Obx(
-                  () => Row(
-                    spacing: 12,
-                    children: [
-                      Expanded(
-                        child: GestureDetector(
-                          onTap: () => controller.signUpTypeValue.value = 'User',
-                          child: Container(
-                            height: 44.px,
-                            decoration: BoxDecoration(
-                              gradient:
-                                  controller.signUpTypeValue.value == 'User'
-                                  ? CommonMethods.commonLinearGradientView()
-                                  : null,
-                              borderRadius: BorderRadius.circular(10.px),
-                              boxShadow: [
-                                BoxShadow(
-                                  blurRadius: 1,
-                                  offset: Offset(.1, .1),
-                                  color: Theme.of(
-                                    Get.context!,
-                                  ).colorScheme.surface.withAlpha(50),
-                                ),
-                              ],
-                              color: Theme.of(
-                                Get.context!,
-                              ).scaffoldBackgroundColor,
-                            ),
-                            child: Center(
-                              child: Text(
-                                StringConstants.user.tr, //'User',
-                                style: Theme.of(context).textTheme.titleMedium
-                                    ?.copyWith(
-                                      fontWeight: FontWeight.w600,
-                                      color:
-                                          controller.signUpTypeValue.value ==
-                                              'User'
-                                          ? Theme.of(
-                                              context,
-                                            ).colorScheme.onPrimary
-                                          : Theme.of(
-                                              context,
-                                            ).colorScheme.onPrimaryContainer,
-                                      fontSize: 14.px,
-                                    ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      Expanded(
-                        child: GestureDetector(
-                          onTap: () =>
-                              controller.signUpTypeValue.value = 'Driver',
-                          child: Container(
-                            height: 44.px,
-                            decoration: BoxDecoration(
-                              gradient:
-                                  controller.signUpTypeValue.value == 'Driver'
-                                  ? CommonMethods.commonLinearGradientView()
-                                  : null,
-                              borderRadius: BorderRadius.circular(10.px),
-                              boxShadow: [
-                                BoxShadow(
-                                  blurRadius: 1,
-                                  offset: Offset(.1, .1),
-                                  color: Theme.of(
-                                    Get.context!,
-                                  ).colorScheme.surface.withAlpha(50),
-                                ),
-                              ],
-                              color: Theme.of(
-                                Get.context!,
-                              ).scaffoldBackgroundColor,
-                            ),
-                            child: Center(
-                              child: Text(
-                                StringConstants.driver.tr,//'Driver',
-                                style: Theme.of(context).textTheme.titleMedium
-                                    ?.copyWith(
-                                      fontWeight: FontWeight.w600,
-                                      color:
-                                          controller.signUpTypeValue.value ==
-                                              'Driver'
-                                          ? Theme.of(
-                                              context,
-                                            ).colorScheme.onPrimary
-                                          : Theme.of(
-                                              context,
-                                            ).colorScheme.onPrimaryContainer,
-                                      fontSize: 14.px,
-                                    ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(height: 16.px),
+              // fieldTitleTextView(
+              //  StringConstants.selectAccountType.tr,// 'Select Account Type',
+              //   Obx(
+              //     () => Row(
+              //       spacing: 12,
+              //       children: [
+              //         Expanded(
+              //           child: GestureDetector(
+              //             onTap: () => controller.signUpTypeValue.value = 'User',
+              //             child: Container(
+              //               height: 44.px,
+              //               decoration: BoxDecoration(
+              //                 gradient:
+              //                     controller.signUpTypeValue.value == 'User'
+              //                     ? CommonMethods.commonLinearGradientView()
+              //                     : null,
+              //                 borderRadius: BorderRadius.circular(10.px),
+              //                 boxShadow: [
+              //                   BoxShadow(
+              //                     blurRadius: 1,
+              //                     offset: Offset(.1, .1),
+              //                     color: Theme.of(
+              //                       Get.context!,
+              //                     ).colorScheme.surface.withAlpha(50),
+              //                   ),
+              //                 ],
+              //                 color: Theme.of(
+              //                   Get.context!,
+              //                 ).scaffoldBackgroundColor,
+              //               ),
+              //               child: Center(
+              //                 child: Text(
+              //                   StringConstants.user.tr, //'User',
+              //                   style: Theme.of(context).textTheme.titleMedium
+              //                       ?.copyWith(
+              //                         fontWeight: FontWeight.w600,
+              //                         color:
+              //                             controller.signUpTypeValue.value ==
+              //                                 'User'
+              //                             ? Theme.of(
+              //                                 context,
+              //                               ).colorScheme.onPrimary
+              //                             : Theme.of(
+              //                                 context,
+              //                               ).colorScheme.onPrimaryContainer,
+              //                         fontSize: 14.px,
+              //                       ),
+              //                 ),
+              //               ),
+              //             ),
+              //           ),
+              //         ),
+              //         Expanded(
+              //           child: GestureDetector(
+              //             onTap: () =>
+              //                 controller.signUpTypeValue.value = 'Driver',
+              //             child: Container(
+              //               height: 44.px,
+              //               decoration: BoxDecoration(
+              //                 gradient:
+              //                     controller.signUpTypeValue.value == 'Driver'
+              //                     ? CommonMethods.commonLinearGradientView()
+              //                     : null,
+              //                 borderRadius: BorderRadius.circular(10.px),
+              //                 boxShadow: [
+              //                   BoxShadow(
+              //                     blurRadius: 1,
+              //                     offset: Offset(.1, .1),
+              //                     color: Theme.of(
+              //                       Get.context!,
+              //                     ).colorScheme.surface.withAlpha(50),
+              //                   ),
+              //                 ],
+              //                 color: Theme.of(
+              //                   Get.context!,
+              //                 ).scaffoldBackgroundColor,
+              //               ),
+              //               child: Center(
+              //                 child: Text(
+              //                   StringConstants.driver.tr,//'Driver',
+              //                   style: Theme.of(context).textTheme.titleMedium
+              //                       ?.copyWith(
+              //                         fontWeight: FontWeight.w600,
+              //                         color:
+              //                             controller.signUpTypeValue.value ==
+              //                                 'Driver'
+              //                             ? Theme.of(
+              //                                 context,
+              //                               ).colorScheme.onPrimary
+              //                             : Theme.of(
+              //                                 context,
+              //                               ).colorScheme.onPrimaryContainer,
+              //                         fontSize: 14.px,
+              //                       ),
+              //                 ),
+              //               ),
+              //             ),
+              //           ),
+              //         ),
+              //       ],
+              //     ),
+              //   ),
+              // ),
+              // SizedBox(height: 16.px),
               fieldTitleTextView(
                 StringConstants.name.tr,
                 CommonWidgets.commonTextFieldForLoginSignUP(

@@ -189,10 +189,6 @@ class StringConstants {
   static const tripDowntownToAirport = 'Trip: Downtown to Airport';
   static const totalExpensesThisWeek = 'Total Expenses This Week';
 
-
-  ///TODO New
-
-
   static const String addNewExpense = "Add New Expense";
   static const String expenseType = "Expense Type";
   static const String toll = "Toll";
@@ -255,5 +251,62 @@ class StringConstants {
   static const timePlaceholder = "00:00";
 
   static const waitingTimeAuto = "Waiting Time: 2h 15m (Auto-calculated)";
+
+
+
+ ///TODO New
+
+  static const pleaseSelectAClientBeforeProceeding = "Please select a client before proceeding.";
+  static const endTime = "End Time";
+  static const unload = "Unload";
+  static const approve = "Approve";
+  static const reject = "Reject";
+  static const month = "Month";
+  static const String addTruckInfo = "Add Truck Info";
+  static const String truckName = "Truck Name";
+  static const String enterTruckName = "Enter truck name";
+
+  static const String truckNumberNew = "Truck Number";
+  static const String enterTruckNumber = "Enter truck number";
+
+  static const String truckModelNew = "Truck Model";
+  static const String enterTruckModel = "Enter truck model";
+
+  static const String mileageNew = "Mileage (km/l)";
+  static const String enterMileage = "Enter mileage";
+
+  static const String lastServiceDate = "Last Service Date";
+  static const String dateFormat = "DD/MM/YYYY";
+
+  static const String insuranceExpiry = "Insurance Expiry";
+
+  static const String saveTruckInfo = "Save Truck Info";
+  static const String insides = "Insides";
+  static const String totalPayments = "Total Payments";
+  static const String totalTrucks = "Total Trucks";
+  static const String total = "Total";
+  static const String activeTrips = "Active Trips";
+  static const String completedTrips = "Completed Trips";
+  static const String clients = 'Clients';
+
+  static const String johnDoeConstructions = "John Doe Constructions";
+  static const String totalAmount = "₹2,45,000";
+  static const String trips = "Trips";
+  static const String contacts = "Contact";
+
+
+  static const String addClientDetails = "Add Client Details";
+  static const String clientName = "Client Name";
+  static const String enterClientName = "Enter Client Name";
+  static const String contactNumber = "Contact Number";
+  static const String enterContactNumber = "Enter Contact Number";
+  static const String email = "Email";
+  static const String enterEmail = "Enter Email";
+  static const String address = "Address";
+  static const String enterAddress = "Enter Address";
+  static const String revenueHistory = "Revenue History (optional)";
+  static const String enterRevenueHistory = "Enter Revenue History";
+  static const String saveClientInfo = "Save Client Info";
+
 
 }

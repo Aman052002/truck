@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:truck/common/cm.dart';
+import 'package:truck/common/cw.dart';
+import 'package:truck/language/string_constants.dart';
 
 class TripManagementController extends GetxController {
 
   final tabBarSelectedValue = Get.parameters['tabValue'].obs;
-
 
   FocusNode clientFocusNode = FocusNode();
   TextEditingController clientController = TextEditingController();
@@ -36,6 +38,10 @@ class TripManagementController extends GetxController {
   FocusNode endTimeFocusNode = FocusNode();
   TextEditingController endTimeController = TextEditingController();
 
+  final startTripValue = false.obs;
+  final markArrivalValue = false.obs;
+  final unloadValue = false.obs;
+
   @override
   void onInit() {
     super.onInit();
@@ -49,6 +55,23 @@ class TripManagementController extends GetxController {
   @override
   void onClose() {
     super.onClose();
+  }
+
+  void clickOnStartTrip() {
+    if(clientController.text.isNotEmpty) {
+      startTripValue.value = true;
+    }
+    else{
+      CommonMethods.commonErrorToast(StringConstants.pleaseSelectAClientBeforeProceeding.tr);
+    }
+  }
+
+  void clickOnMarkArrivalBtn() {
+    markArrivalValue.value = true;
+  }
+
+  void clickOnUnloadBtn() {
+    unloadValue.value = true;
   }
 
 }

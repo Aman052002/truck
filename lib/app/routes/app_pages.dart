@@ -1,11 +1,17 @@
 import 'package:get/get.dart';
 
+import '../modules/add_client/bindings/add_client_binding.dart';
+import '../modules/add_client/views/add_client_view.dart';
+import '../modules/addtruck/bindings/addtruck_binding.dart';
+import '../modules/addtruck/views/addtruck_view.dart';
 import '../modules/book_truck/bindings/book_truck_binding.dart';
 import '../modules/book_truck/views/book_truck_view.dart';
 import '../modules/bottom_bar/bindings/bottom_bar_binding.dart';
 import '../modules/bottom_bar/views/bottom_bar_view.dart';
 import '../modules/change_password/bindings/change_password_binding.dart';
 import '../modules/change_password/views/change_password_view.dart';
+import '../modules/clients/bindings/clients_binding.dart';
+import '../modules/clients/views/clients_view.dart';
 import '../modules/drivers/bindings/drivers_binding.dart';
 import '../modules/drivers/views/drivers_view.dart';
 import '../modules/edit_profile/bindings/edit_profile_binding.dart';
@@ -162,6 +168,21 @@ class AppPages {
       name: _Paths.TRIP_MANAGEMENT,
       page: () => const TripManagementView(),
       binding: TripManagementBinding(),
+    ),
+    GetPage(
+      name: _Paths.ADDTRUCK,
+      page: () => const AddtruckView(),
+      binding: AddtruckBinding(),
+    ),
+    GetPage(
+      name: _Paths.ADD_CLIENT,
+      page: () => const AddClientView(),
+      binding: AddClientBinding(),
+    ),
+    GetPage(
+      name: _Paths.CLIENTS,
+      page: () => const ClientsView(),
+      binding: ClientsBinding(),
     ),
   ];
 }

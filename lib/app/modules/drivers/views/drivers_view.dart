@@ -69,8 +69,7 @@ class DriversView extends GetView<DriversController> {
                                 ),
                                 Expanded(
                                   child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
                                       Row(
                                         children: [
@@ -90,23 +89,23 @@ class DriversView extends GetView<DriversController> {
                                                   ),
                                             ),
                                           ),
-                                          Icon(
-                                            Icons.star,
-                                            color: Colors.yellow,
-                                          ),
-                                          Text(
-                                            '4.8',
-                                            style: Theme.of(Get.context!)
-                                                .textTheme
-                                                .titleMedium
-                                                ?.copyWith(
-                                                  fontWeight: FontWeight.w600,
-                                                  color: Theme.of(
-                                                    Get.context!,
-                                                  ).colorScheme.surface,
-                                                  fontSize: 12.px,
-                                                ),
-                                          ),
+                                          // Icon(
+                                          //   Icons.star,
+                                          //   color: Colors.yellow,
+                                          // ),
+                                          // Text(
+                                          //   '4.8',
+                                          //   style: Theme.of(Get.context!)
+                                          //       .textTheme
+                                          //       .titleMedium
+                                          //       ?.copyWith(
+                                          //         fontWeight: FontWeight.w600,
+                                          //         color: Theme.of(
+                                          //           Get.context!,
+                                          //         ).colorScheme.surface,
+                                          //         fontSize: 12.px,
+                                          //       ),
+                                          // ),
                                         ],
                                       ),
                                       Text(
@@ -130,7 +129,8 @@ class DriversView extends GetView<DriversController> {
                                             MainAxisAlignment.spaceBetween,
                                         children: [
                                           Text(
-                                            '\$25/hr',
+                                            // '\$25/hr',
+                                            '6500/ ${StringConstants.month.tr}',
                                             style: Theme.of(Get.context!)
                                                 .textTheme
                                                 .titleMedium
@@ -164,43 +164,93 @@ class DriversView extends GetView<DriversController> {
                                                   ),
                                             ),
                                           ),
+                                          // Container(
+                                          //   height: 36.px,
+                                          //   width: 90.px,
+                                          //   decoration: BoxDecoration(
+                                          //     // gradient: CommonMethods.commonLinearGradientView(),
+                                          //     color: Theme.of(
+                                          //       context,
+                                          //     ).primaryColor,
+                                          //     borderRadius:
+                                          //         BorderRadius.circular(8.px),
+                                          //   ),
+                                          //   child: Row(
+                                          //     spacing: 6.px,
+                                          //     mainAxisAlignment:
+                                          //         MainAxisAlignment.center,
+                                          //     children: [
+                                          //       CommonMethods.appIcons(
+                                          //         assetName:
+                                          //             IconConstantsSvg.icBook,
+                                          //         width: 16.px,
+                                          //         height: 16.px,
+                                          //       ),
+                                          //       Text(
+                                          //         StringConstants.book.tr,
+                                          //         style: Theme.of(Get.context!)
+                                          //             .textTheme
+                                          //             .titleMedium
+                                          //             ?.copyWith(
+                                          //               fontWeight:
+                                          //                   FontWeight.w700,
+                                          //               color: Theme.of(
+                                          //                 Get.context!,
+                                          //               ).colorScheme.onPrimary,
+                                          //               fontSize: 16.px,
+                                          //             ),
+                                          //       ),
+                                          //     ],
+                                          //   ),
+                                          // ),
+                                        ],
+                                      ),
+                                      SizedBox(height: 12.px),
+                                      Row(
+                                        mainAxisAlignment: MainAxisAlignment.end,
+                                        spacing: 10.px,
+                                        children: [
                                           Container(
                                             height: 36.px,
-                                            width: 90.px,
+                                            width: 120.px,
                                             decoration: BoxDecoration(
-                                              // gradient: CommonMethods.commonLinearGradientView(),
-                                              color: Theme.of(
-                                                context,
-                                              ).primaryColor,
-                                              borderRadius:
-                                                  BorderRadius.circular(8.px),
+                                              border: Border.all(
+                                                color: Theme.of(context).colorScheme.error,
+                                                width: 1.5.px,
+                                              ),
+                                              borderRadius: BorderRadius.circular(8.px),
                                             ),
-                                            child: Row(
-                                              spacing: 6.px,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                CommonMethods.appIcons(
-                                                  assetName:
-                                                      IconConstantsSvg.icBook,
-                                                  width: 16.px,
-                                                  height: 16.px,
+                                            child: Center(
+                                              child: Text(
+                                                StringConstants.reject.tr,
+                                                style: Theme.of(Get.context!).textTheme.titleMedium?.copyWith(
+                                                  fontWeight: FontWeight.w600,
+                                                  color: Theme.of(Get.context!).colorScheme.error,
+                                                  fontSize: 14.px,
                                                 ),
-                                                Text(
-                                                  StringConstants.book.tr,
-                                                  style: Theme.of(Get.context!)
-                                                      .textTheme
-                                                      .titleMedium
-                                                      ?.copyWith(
-                                                        fontWeight:
-                                                            FontWeight.w700,
-                                                        color: Theme.of(
-                                                          Get.context!,
-                                                        ).colorScheme.onPrimary,
-                                                        fontSize: 16.px,
-                                                      ),
+                                              ),
+                                            ),
+                                          ),
+                                          GestureDetector(
+                                            onTap: () {},
+                                            child: Container(
+                                              height: 36.px,
+                                              width: 120.px,
+                                              decoration: BoxDecoration(
+                                                color: Theme.of(context).primaryColor,
+                                                borderRadius:
+                                                BorderRadius.circular(8.px),
+                                              ),
+                                              child: Center(
+                                                child: Text(
+                                                  StringConstants.approve.tr,
+                                                  style: Theme.of(Get.context!).textTheme.titleMedium?.copyWith(
+                                                    fontWeight: FontWeight.w600,
+                                                    color: Theme.of(Get.context!).colorScheme.onPrimary,
+                                                    fontSize: 14.px,
+                                                  ),
                                                 ),
-                                              ],
+                                              ),
                                             ),
                                           ),
                                         ],
@@ -224,4 +274,5 @@ class DriversView extends GetView<DriversController> {
       ),
     );
   }
+
 }

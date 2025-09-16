@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -116,77 +119,83 @@ class LoginView extends GetView<LoginController> {
                     ),
                     SizedBox(height: 20.px),
                     CommonWidgets.commonElevatedButton(
-                      onPressed: () => Get.offAllNamed(Routes.BOTTOM_BAR),
+                      onPressed: () => (!kIsWeb && (Platform.isAndroid || Platform.isIOS))
+                          ? Get.offAllNamed(Routes.HOME)
+                          : Get.offAllNamed(Routes.BOTTOM_BAR),
                       text: StringConstants.loginButton.tr,
                     ),
-                    SizedBox(height: 16.px),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          StringConstants.dontHaveAccount.tr,
-                          style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                            color: Theme.of(context).colorScheme.surface,
-                            fontSize: 14.px,
-                          ),
-                        ),
-                        GestureDetector(
-                          onTap: () => Get.toNamed(Routes.SIGNUP),
-                          child: Text(
-                            StringConstants.register.tr,
+                    if(Platform.isAndroid || Platform.isIOS)...[
+                      SizedBox(height: 16.px),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            StringConstants.dontHaveAccount.tr,
                             style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                              fontWeight: FontWeight.w700,
-                              color: Theme.of(context).colorScheme.inversePrimary,
+                              color: Theme.of(context).colorScheme.surface,
                               fontSize: 14.px,
                             ),
                           ),
-                        ),
-                      ],
-                    ),
+                          GestureDetector(
+                            onTap: () => Get.toNamed(Routes.SIGNUP),
+                            child: Text(
+                              StringConstants.register.tr,
+                              style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                                fontWeight: FontWeight.w700,
+                                color: Theme.of(context).colorScheme.inversePrimary,
+                                fontSize: 14.px,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ]
                   ],
                 ),
-                Spacer(),
-                Text(
-                  StringConstants.bySigningIn.tr,
-                  style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                    fontWeight: FontWeight.w600,
-                    color: Theme.of(context).colorScheme.surface,
-                    fontSize: 12.px,
+                if(Platform.isAndroid || Platform.isIOS)...[
+                  Spacer(),
+                  Text(
+                    StringConstants.bySigningIn.tr,
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                      fontWeight: FontWeight.w600,
+                      color: Theme.of(context).colorScheme.surface,
+                      fontSize: 12.px,
+                    ),
                   ),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      StringConstants.termsAndConditions.tr,
-                      style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                        fontWeight: FontWeight.w600,
-                        color: Theme.of(context).colorScheme.inversePrimary,
-                        fontSize: 12.px,
-                        decoration: TextDecoration.underline,
-                        decorationColor: Theme.of(context).colorScheme.inversePrimary,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        StringConstants.termsAndConditions.tr,
+                        style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                          fontWeight: FontWeight.w600,
+                          color: Theme.of(context).colorScheme.inversePrimary,
+                          fontSize: 12.px,
+                          decoration: TextDecoration.underline,
+                          decorationColor: Theme.of(context).colorScheme.inversePrimary,
+                        ),
                       ),
-                    ),
-                    Text(
-                      ' , ',
-                      style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                        fontWeight: FontWeight.w600,
-                        color: Theme.of(context).colorScheme.inversePrimary,
-                        fontSize: 12.px,
+                      Text(
+                        ' , ',
+                        style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                          fontWeight: FontWeight.w600,
+                          color: Theme.of(context).colorScheme.inversePrimary,
+                          fontSize: 12.px,
+                        ),
                       ),
-                    ),
-                    Text(
-                      StringConstants.privacyPolicy.tr,
-                      style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                        fontWeight: FontWeight.w600,
-                        color: Theme.of(context).colorScheme.inversePrimary,
-                        fontSize: 12.px,
-                        decoration: TextDecoration.underline,
-                        decorationColor: Theme.of(context).colorScheme.inversePrimary,
+                      Text(
+                        StringConstants.privacyPolicy.tr,
+                        style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                          fontWeight: FontWeight.w600,
+                          color: Theme.of(context).colorScheme.inversePrimary,
+                          fontSize: 12.px,
+                          decoration: TextDecoration.underline,
+                          decorationColor: Theme.of(context).colorScheme.inversePrimary,
+                        ),
                       ),
-                    ),
-                  ],
-                ),
+                    ],
+                  ),
+                ],
                 SizedBox(height: 16.px),
               ],
             ),

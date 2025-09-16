@@ -14,257 +14,23 @@ class NewTrip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        commonCardView(
-          icon: IconConstantsSvg.icTruck,
-          title: StringConstants.tripSetup.tr,
-          child: Column(
-            spacing: 12.px,
-            children: [
-              fieldTitleTextView(
-                StringConstants.selectClient.tr,
-                CommonWidgets.commonTextFieldForLoginSignUP(
-                  controller: controller.clientController,
-                  hintText: StringConstants.chooseClient.tr,
-                  focusNode: controller.clientFocusNode,
-                  readOnly: true,
-                  suffixIcon: DropdownButtonHideUnderline(
-                    child: DropdownButton2<String>(
-                      isExpanded: true,
-                      customButton: Icon(Icons.keyboard_arrow_down_outlined,size: 24.px),
-                      items: [
-                        StringConstants.client1.tr,
-                        StringConstants.client2.tr,
-                      ].map((item) => DropdownMenuItem<String>(
-                        value: item,
-                        child: Text(item, style: const TextStyle(fontSize: 14)),
-                      )).toList(),
-                      onChanged: (value) => controller.clientController.text = value ?? '',
-                      dropdownStyleData: DropdownStyleData(
-                        maxHeight: 250,
-                        width: MediaQuery.of(Get.context!).size.width * 0.9,
-                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(8)),
-                      ),
-                      menuItemStyleData: MenuItemStyleData(height: 40.px),
-                    ),
-                  ),
-                ),
-              ),
-              fieldTitleTextView(
-                StringConstants.selectTruck.tr,
-                CommonWidgets.commonTextFieldForLoginSignUP(
-                  controller: controller.truckController,
-                  hintText: StringConstants.chooseTruck.tr,
-                  focusNode: controller.truckFocusNode,
-                  readOnly: true,
-                  suffixIcon: DropdownButtonHideUnderline(
-                    child: DropdownButton2<String>(
-                      isExpanded: true,
-                      customButton: Icon(Icons.keyboard_arrow_down_outlined,size: 24.px),
-                      items: [
-                        StringConstants.truck1.tr,
-                        StringConstants.truck2.tr,
-                      ].map((item) => DropdownMenuItem<String>(
-                        value: item,
-                        child: Text(item, style: const TextStyle(fontSize: 14)),
-                      )).toList(),
-                      onChanged: (value) => controller.truckController.text = value ?? '',
-                      dropdownStyleData: DropdownStyleData(
-                        maxHeight: 250,
-                        width: MediaQuery.of(Get.context!).size.width * 0.9,
-                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(8)),
-                      ),
-                      menuItemStyleData: MenuItemStyleData(height: 40.px),
-                    ),
-                  ),
-                ),
-              ),
-              fieldTitleTextView(
-                StringConstants.tripDate.tr,
-                CommonWidgets.commonTextFieldForLoginSignUP(
-                  controller: controller.tripDateController,
-                  hintText: StringConstants.selectTripDate.tr,
-                  focusNode: controller.tripDateFocusNode,
-                  readOnly: true,
-                  suffixIcon: CommonMethods.appIcons(
-                    assetName: IconConstantsSvg.icCalendar,
-                    height: 16.px,
-                    width: 16.px,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-
-        commonCardView(
-          icon: IconConstantsSvg.icDeparture,
-          title: StringConstants.departure.tr,
-          child: Column(
-            spacing: 12.px,
-            children: [
-              fieldTitleTextView(
-                StringConstants.departureTime.tr,
-                CommonWidgets.commonTextFieldForLoginSignUP(
-                  controller: controller.departureTimeController,
-                  hintText: StringConstants.selectDepartureTime.tr,
-                  focusNode: controller.departureTimeFocusNode,
-                  readOnly: true,
-                  suffixIcon: CommonMethods.appIcons(assetName: IconConstantsSvg.icClock),
-                ),
-              ),
-              fieldTitleTextView(
-                StringConstants.gpsCoordinates.tr,
-                Row(
-                  spacing: 10.px,
-                  children: [
-                    Expanded(
-                      child: CommonWidgets.commonTextFieldForLoginSignUP(
-                        controller: controller.gPSCoordinatesController,
-                        hintText: StringConstants.enterHere.tr,
-                        focusNode: controller.gPSCoordinatesFocusNode,
-                      ),
-                    ),
-                    Container(
-                      height: 48.px,
-                      width: 44.px,
-                      decoration: BoxDecoration(
-                        color: Theme.of(context).primaryColor,
-                        borderRadius: BorderRadius.circular(8.px),
-                      ),
-                      child: Icon(Icons.my_location,
-                        color: Theme.of(context).colorScheme.onPrimary,
-                        size: 20.px,
-                      ),
-                    )
-                  ],
-                ),
-              ),
-              fieldTitleTextView(
-                StringConstants.kmToDestination.tr,
-                CommonWidgets.commonTextFieldForLoginSignUP(
-                  controller: controller.kmToDestinationController,
-                  hintText: StringConstants.enterDistanceInKm.tr,
-                  focusNode: controller.kmToDestinationFocusNode,
-                  readOnly: true,
-                  suffixIcon: CommonMethods.appIcons(assetName: IconConstantsSvg.icClock),
-                ),
-              ),
-              SizedBox(),
-              commonBtnView(icon: IconConstantsSvg.icDeparture, title: StringConstants.startTrip.tr),
-            ],
-          ),
-        ),
-
-        commonCardView(
-          icon: IconConstantsSvg.icArrival,
-          title: StringConstants.arrivalAtUnloading.tr,
-          child: Column(
-            spacing: 12.px,
-            children: [
-              fieldTitleTextView(
-                StringConstants.arrivalTime.tr,
-                CommonWidgets.commonTextFieldForLoginSignUP(
-                  controller: controller.arrivalTimeController,
-                  hintText: StringConstants.selectArrivalTime.tr,
-                  focusNode: controller.arrivalTimeFocusNode,
-                  readOnly: true,
-                  suffixIcon: CommonMethods.appIcons(assetName: IconConstantsSvg.icClock),
-                ),
-              ),
-              fieldTitleTextView(
-                StringConstants.gpsCoordinates.tr,
-                Row(
-                  spacing: 10.px,
-                  children: [
-                    Expanded(
-                      child: CommonWidgets.commonTextFieldForLoginSignUP(
-                        controller: controller.arrivalGPSCoordinatesController,
-                        hintText: StringConstants.enterHere.tr,
-                        focusNode: controller.arrivalGPSCoordinatesFocusNode,
-                      ),
-                    ),
-                    Container(
-                      height: 48.px,
-                      width: 44.px,
-                      decoration: BoxDecoration(
-                        color: Theme.of(context).primaryColor,
-                        borderRadius: BorderRadius.circular(8.px),
-                      ),
-                      child: Icon(Icons.my_location,
-                        color: Theme.of(context).colorScheme.onPrimary,
-                        size: 20.px,
-                      ),
-                    )
-                  ],
-                ),
-              ),
-              SizedBox(),
-              commonBtnView(icon: IconConstantsSvg.icCheck, title: StringConstants.markArrival.tr),
-            ],
-          ),
-        ),
-
-        commonCardView(
-          icon: IconConstantsSvg.icUnloading,
-          title: StringConstants.unloading.tr,
-          child: Column(
-            spacing: 12.px,
-            children: [
-              fieldTitleTextView(
-                StringConstants.startTime.tr,
-                CommonWidgets.commonTextFieldForLoginSignUP(
-                  controller: controller.startTimeController,
-                  hintText: StringConstants.timePlaceholder.tr,
-                  focusNode: controller.startTimeFocusNode,
-                  readOnly: true,
-                  suffixIcon: CommonMethods.appIcons(assetName: IconConstantsSvg.icClock),
-                ),
-              ),
-              fieldTitleTextView(
-                StringConstants.endTimeOptional.tr,
-                CommonWidgets.commonTextFieldForLoginSignUP(
-                  controller: controller.endTimeController,
-                  hintText: StringConstants.timePlaceholder.tr,
-                  focusNode: controller.endTimeFocusNode,
-                  readOnly: true,
-                  suffixIcon: CommonMethods.appIcons(assetName: IconConstantsSvg.icClock),
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.all(12.px),
-                decoration: BoxDecoration(
-                  color: Theme.of(context).primaryColor.withAlpha(30),
-                  borderRadius: BorderRadius.circular(8.px),
-                ),
-                child: Row(
-                  spacing: 6.px,
-                  children: [
-                    CommonMethods.appIcons(
-                      assetName: IconConstantsSvg.icClock,
-                      color: Theme.of(context).primaryColor,
-                    ),
-                    Text(
-                      StringConstants.waitingTimeAuto.tr,
-                      style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                        fontSize: 14.px,
-                        fontWeight: FontWeight.w600,
-                        color: Theme.of(context).primaryColor,
-                      ),
-                    )
-                  ],
-                ),
-              )
-            ],
-          ),
-        ),
-        SizedBox(height: 80.px),
-      ],
-    );
+    return Obx(() {
+      return Column(
+        children: [
+          tripSetupCardView(),
+          departureCardView(),
+          if(controller.startTripValue.value)...[
+            arrivalAtUnloadingPointCardView(),
+            if(controller.markArrivalValue.value)
+              unloadingCardView(),
+          ],
+          SizedBox(height: 80.px),
+        ],
+      );
+    },);
   }
 
-  Widget commonCardView({required String icon, required String title, required Widget child}){
+  Widget commonCardView({required String icon, required String title, required Widget child, bool showLockIcon = false}){
     return Container(
       margin: EdgeInsets.only(top: 12.px),
       padding: EdgeInsets.symmetric(vertical: 16.px),
@@ -291,6 +57,9 @@ class NewTrip extends StatelessWidget {
                   fontSize: 16.px,
                 ),
               ),
+              Spacer(),
+              if(showLockIcon)
+              Icon(Icons.lock),
             ],
           ).paddingSymmetric(horizontal: 16.px),
           Divider(
@@ -352,6 +121,319 @@ class NewTrip extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget tripSetupCardView() {
+    return commonCardView(
+      icon: IconConstantsSvg.icTruck,
+      title: StringConstants.tripSetup.tr,
+      showLockIcon: controller.startTripValue.value,
+      child: Column(
+        spacing: 12.px,
+        children: [
+          fieldTitleTextView(
+            StringConstants.selectClient.tr,
+            CommonWidgets.commonTextFieldForLoginSignUP(
+              controller: controller.clientController,
+              hintText: StringConstants.chooseClient.tr,
+              focusNode: controller.clientFocusNode,
+              readOnly: true,
+              suffixIcon: DropdownButtonHideUnderline(
+                child: DropdownButton2<String>(
+                  isExpanded: true,
+                  customButton: Icon(Icons.keyboard_arrow_down_outlined,size: 24.px),
+                  items: [
+                    StringConstants.client1.tr,
+                    StringConstants.client2.tr,
+                  ].map((item) => DropdownMenuItem<String>(
+                    value: item,
+                    child: Text(item, style: const TextStyle(fontSize: 14)),
+                  )).toList(),
+                  onChanged: (value) => controller.clientController.text = value ?? '',
+                  dropdownStyleData: DropdownStyleData(
+                    maxHeight: 250,
+                    width: MediaQuery.of(Get.context!).size.width * 0.9,
+                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(8)),
+                  ),
+                  menuItemStyleData: MenuItemStyleData(height: 40.px),
+                ),
+              ),
+            ),
+          ),
+          fieldTitleTextView(
+            StringConstants.selectTruck.tr,
+            CommonWidgets.commonTextFieldForLoginSignUP(
+              controller: controller.truckController,
+              hintText: StringConstants.chooseTruck.tr,
+              focusNode: controller.truckFocusNode,
+              readOnly: true,
+              suffixIcon: DropdownButtonHideUnderline(
+                child: DropdownButton2<String>(
+                  isExpanded: true,
+                  customButton: Icon(Icons.keyboard_arrow_down_outlined,size: 24.px),
+                  items: [
+                    StringConstants.truck1.tr,
+                    StringConstants.truck2.tr,
+                  ].map((item) => DropdownMenuItem<String>(
+                    value: item,
+                    child: Text(item, style: const TextStyle(fontSize: 14)),
+                  )).toList(),
+                  onChanged: (value) => controller.truckController.text = value ?? '',
+                  dropdownStyleData: DropdownStyleData(
+                    maxHeight: 250,
+                    width: MediaQuery.of(Get.context!).size.width * 0.9,
+                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(8)),
+                  ),
+                  menuItemStyleData: MenuItemStyleData(height: 40.px),
+                ),
+              ),
+            ),
+          ),
+          fieldTitleTextView(
+            StringConstants.tripDate.tr,
+            CommonWidgets.commonTextFieldForLoginSignUP(
+              controller: controller.tripDateController,
+              hintText: StringConstants.selectTripDate.tr,
+              focusNode: controller.tripDateFocusNode,
+              readOnly: true,
+              suffixIcon: CommonMethods.appIcons(
+                assetName: IconConstantsSvg.icCalendar,
+                height: 16.px,
+                width: 16.px,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget departureCardView() {
+    return commonCardView(
+      icon: IconConstantsSvg.icDeparture,
+      title: StringConstants.departure.tr,
+      showLockIcon: controller.startTripValue.value,
+      child: Column(
+        spacing: 12.px,
+        children: [
+          fieldTitleTextView(
+            StringConstants.departureTime.tr,
+            CommonWidgets.commonTextFieldForLoginSignUP(
+              controller: controller.departureTimeController,
+              hintText: StringConstants.selectDepartureTime.tr,
+              focusNode: controller.departureTimeFocusNode,
+              readOnly: true,
+              suffixIcon: CommonMethods.appIcons(assetName: IconConstantsSvg.icClock),
+            ),
+          ),
+          fieldTitleTextView(
+            StringConstants.gpsCoordinates.tr,
+            Row(
+              spacing: 10.px,
+              children: [
+                Expanded(
+                  child: CommonWidgets.commonTextFieldForLoginSignUP(
+                    controller: controller.gPSCoordinatesController,
+                    hintText: StringConstants.enterHere.tr,
+                    focusNode: controller.gPSCoordinatesFocusNode,
+                  ),
+                ),
+                Container(
+                  height: 48.px,
+                  width: 44.px,
+                  decoration: BoxDecoration(
+                    color: Theme.of(Get.context!).primaryColor,
+                    borderRadius: BorderRadius.circular(8.px),
+                  ),
+                  child: Icon(
+                    Icons.my_location,
+                    color: Theme.of(Get.context!).colorScheme.onPrimary,
+                    size: 20.px,
+                  ),
+                )
+              ],
+            ),
+          ),
+          SizedBox(),
+          if(!controller.startTripValue.value)
+            commonBtnView(
+              onTap: () => controller.clickOnStartTrip(),
+              icon: IconConstantsSvg.icDeparture,
+              title: StringConstants.startTrip.tr,
+            ),
+        ],
+      ),
+    );
+  }
+
+  Widget arrivalAtUnloadingPointCardView() {
+    return commonCardView(
+      icon: IconConstantsSvg.icArrival,
+      title: StringConstants.arrivalAtUnloading.tr,
+      showLockIcon: controller.markArrivalValue.value,
+      child: Column(
+        spacing: 12.px,
+        children: [
+          fieldTitleTextView(
+            StringConstants.arrivalTime.tr,
+            CommonWidgets.commonTextFieldForLoginSignUP(
+              controller: controller.arrivalTimeController,
+              hintText: StringConstants.selectArrivalTime.tr,
+              focusNode: controller.arrivalTimeFocusNode,
+              readOnly: true,
+              suffixIcon: CommonMethods.appIcons(assetName: IconConstantsSvg.icClock),
+            ),
+          ),
+          fieldTitleTextView(
+            StringConstants.gpsCoordinates.tr,
+            Row(
+              spacing: 10.px,
+              children: [
+                Expanded(
+                  child: CommonWidgets.commonTextFieldForLoginSignUP(
+                    controller: controller.arrivalGPSCoordinatesController,
+                    hintText: StringConstants.enterHere.tr,
+                    focusNode: controller.arrivalGPSCoordinatesFocusNode,
+                  ),
+                ),
+                Container(
+                  height: 48.px,
+                  width: 44.px,
+                  decoration: BoxDecoration(
+                    color: Theme.of(Get.context!).primaryColor,
+                    borderRadius: BorderRadius.circular(8.px),
+                  ),
+                  child: Icon(Icons.my_location,
+                    color: Theme.of(Get.context!).colorScheme.onPrimary,
+                    size: 20.px,
+                  ),
+                )
+              ],
+            ),
+          ),
+          fieldTitleTextView(
+            StringConstants.kmToDestination.tr,
+            CommonWidgets.commonTextFieldForLoginSignUP(
+              controller: controller.kmToDestinationController,
+              hintText: StringConstants.enterDistanceInKm.tr,
+              focusNode: controller.kmToDestinationFocusNode,
+              readOnly: true,
+              suffixIcon: CommonMethods.appIcons(assetName: IconConstantsSvg.icClock),
+            ),
+          ),
+          if(!controller.markArrivalValue.value)...[
+            SizedBox(),
+            commonBtnView(
+              icon: IconConstantsSvg.icCheck,
+              title: StringConstants.markArrival.tr,
+              onTap: () => controller.clickOnMarkArrivalBtn(),
+            ),
+          ]
+        ],
+      ),
+    );
+  }
+
+  Widget unloadingCardView() {
+    return commonCardView(
+      icon: IconConstantsSvg.icUnloading,
+      title: StringConstants.unloading.tr,
+      showLockIcon: controller.unloadValue.value,
+      child: Column(
+        spacing: 12.px,
+        children: [
+          // fieldTitleTextView(
+          //   StringConstants.startTime.tr,
+          //   CommonWidgets.commonTextFieldForLoginSignUP(
+          //     controller: controller.startTimeController,
+          //     hintText: StringConstants.timePlaceholder.tr,
+          //     focusNode: controller.startTimeFocusNode,
+          //     readOnly: true,
+          //     suffixIcon: CommonMethods.appIcons(assetName: IconConstantsSvg.icClock),
+          //   ),
+          // ),
+          fieldTitleTextView(
+            StringConstants.endTime.tr,
+            CommonWidgets.commonTextFieldForLoginSignUP(
+              controller: controller.endTimeController,
+              hintText: StringConstants.timePlaceholder.tr,
+              focusNode: controller.endTimeFocusNode,
+              readOnly: true,
+              suffixIcon: CommonMethods.appIcons(assetName: IconConstantsSvg.icClock),
+            ),
+          ),
+
+          fieldTitleTextView(
+            StringConstants.gpsCoordinates.tr,
+            Row(
+              spacing: 10.px,
+              children: [
+                Expanded(
+                  child: CommonWidgets.commonTextFieldForLoginSignUP(
+                    controller: controller.arrivalGPSCoordinatesController,
+                    hintText: StringConstants.enterHere.tr,
+                    focusNode: controller.arrivalGPSCoordinatesFocusNode,
+                  ),
+                ),
+                Container(
+                  height: 48.px,
+                  width: 44.px,
+                  decoration: BoxDecoration(
+                    color: Theme.of(Get.context!).primaryColor,
+                    borderRadius: BorderRadius.circular(8.px),
+                  ),
+                  child: Icon(Icons.my_location,
+                    color: Theme.of(Get.context!).colorScheme.onPrimary,
+                    size: 20.px,
+                  ),
+                )
+              ],
+            ),
+          ),
+          SizedBox(),
+          if(!controller.unloadValue.value)
+          commonBtnView(
+            icon: IconConstantsSvg.icCheck,
+            title: StringConstants.unload.tr,
+            onTap: () => controller.clickOnUnloadBtn(),
+          ),
+          if(controller.unloadValue.value)...[
+            Container(
+              padding: EdgeInsets.all(12.px),
+              decoration: BoxDecoration(
+                color: Theme.of(Get.context!).primaryColor.withAlpha(30),
+                borderRadius: BorderRadius.circular(8.px),
+              ),
+              child: Row(
+                spacing: 6.px,
+                children: [
+                  CommonMethods.appIcons(
+                    assetName: IconConstantsSvg.icClock,
+                    color: Theme.of(Get.context!).primaryColor,
+                  ),
+                  Text(
+                    StringConstants.waitingTimeAuto.tr,
+                    style: Theme.of(Get.context!).textTheme.titleMedium?.copyWith(
+                      fontSize: 14.px,
+                      fontWeight: FontWeight.w600,
+                      color: Theme.of(Get.context!).primaryColor,
+                    ),
+                  )
+                ],
+              ),
+            ),
+            Text(
+              'Trip successfully completed!',
+              style: Theme.of(Get.context!).textTheme.titleMedium?.copyWith(
+                fontWeight: FontWeight.w700,
+                color: Theme.of(Get.context!).colorScheme.onPrimaryContainer,
+                fontSize: 16.px,
+              ),
+            )
+          ],
+        ],
       ),
     );
   }

@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -20,7 +23,7 @@ class DrawerView extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(0),
       ),
-      width: Get.width-110,
+      width: (!kIsWeb && (Platform.isAndroid || Platform.isIOS)) ? Get.width/1.3: MediaQuery.of(context).size.width * 0.2,
       child: SafeArea(
         child: BackgroundImage(
           child: ListView(

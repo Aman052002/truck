@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
@@ -80,6 +81,32 @@ class CommonMethods {
       child: appIcons(assetName: assetName, width: width, height: height),
     ),
   );
+
+  static void commonErrorToast(String errorMsg) {
+    Fluttertoast.cancel();
+    Fluttertoast.showToast(
+      msg: errorMsg,
+      toastLength: Toast.LENGTH_SHORT,
+      gravity: ToastGravity.TOP,
+      timeInSecForIosWeb: 1,
+      backgroundColor: Theme.of(Get.context!).colorScheme.error,
+      textColor: Colors.white,
+      fontSize: 16.0,
+    );
+  }
+
+  static void commonToast(String msg) {
+    Fluttertoast.cancel();
+    Fluttertoast.showToast(
+      msg: msg,
+      toastLength: Toast.LENGTH_SHORT,
+      gravity: ToastGravity.TOP,
+      timeInSecForIosWeb: 1,
+      backgroundColor: Theme.of(Get.context!).primaryColor,
+      textColor: Colors.white,
+      fontSize: 16.0,
+    );
+  }
 }
 
 class GradientWidget extends StatelessWidget {

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:truck/app/modules/clients/controllers/clients_controller.dart';
 import 'package:truck/app/modules/drivers/controllers/drivers_controller.dart';
 import 'package:truck/app/modules/home/controllers/home_controller.dart';
 import 'package:truck/app/modules/reports/controllers/reports_controller.dart';
@@ -17,7 +18,7 @@ class BottomBarController extends GetxController {
     Get.lazyPut(() => HomeController());
     Get.lazyPut(() => TrucksController());
     Get.lazyPut(() => DriversController());
-    Get.lazyPut(() => ReportsController());
+    Get.lazyPut(() => ClientsController());
   }
 
   @override

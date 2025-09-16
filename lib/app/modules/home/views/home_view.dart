@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -9,6 +12,7 @@ import '../../../../common/background_image.dart';
 import '../../../../language/string_constants.dart';
 import '../../../routes/app_pages.dart';
 import '../controllers/home_controller.dart';
+import '../home_ui_view/admin_dashboard_view.dart';
 import '../home_ui_view/drawer_view.dart';
 import '../home_ui_view/progress_card_view.dart';
 import '../home_ui_view/trip_detail_card_view.dart';
@@ -32,10 +36,29 @@ class HomeView extends GetView<HomeController> {
                   child: ListView(
                     children: [
                       SizedBox(height: 30.px),
-                      ProgressCardView(controller: controller),
-                      SizedBox(height: 16.px),
-                      TripDetailCardView(controller: controller),
-                      SizedBox(height: 16.px),
+                      if (kIsWeb) ...[
+                        Text(
+                          StringConstants.insides.tr,
+                          style: Theme.of(Get.context!).textTheme.titleMedium
+                              ?.copyWith(
+                            fontWeight: FontWeight.w700,
+                            color: Theme.of(
+                              Get.context!,
+                            ).colorScheme.onPrimaryContainer,
+                            fontSize: 18.px,
+                          ),
+                        ),
+                        SizedBox(height: 10.px),
+                        AdminDashboardView(),
+                        SizedBox(height: 16.px),
+                      ],
+
+                      if (!kIsWeb && (Platform.isAndroid || Platform.isIOS)) ...[
+                        ProgressCardView(controller: controller),
+                        SizedBox(height: 16.px),
+                        TripDetailCardView(controller: controller),
+                        SizedBox(height: 16.px),
+                      ],
                       Text(
                         StringConstants.quickActions.tr,
                         style: Theme.of(Get.context!).textTheme.titleMedium
