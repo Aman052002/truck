@@ -307,6 +307,7 @@ class StringConstants {
   static const String revenueHistory = "Revenue History (optional)";
   static const String enterRevenueHistory = "Enter Revenue History";
   static const String saveClientInfo = "Save Client Info";
+  static const String truckMaintenance = "Truck Maintenance";
 
 
 }

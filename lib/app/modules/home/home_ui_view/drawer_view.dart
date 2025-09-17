@@ -23,7 +23,7 @@ class DrawerView extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(0),
       ),
-      width: (!kIsWeb && (Platform.isAndroid || Platform.isIOS)) ? Get.width/1.3: MediaQuery.of(context).size.width * 0.2,
+      width: (!kIsWeb && (Platform.isAndroid || Platform.isIOS)) ? Get.width/1.3: Get.width/3,
       child: SafeArea(
         child: BackgroundImage(
           child: ListView(
@@ -41,32 +41,38 @@ class DrawerView extends StatelessWidget {
                         backgroundColor: Colors.white,
                         backgroundImage: AssetImage(ImageConstants.imageAppLogo),
                       ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            StringConstants.drawerTitle1.tr,
-                            style: Theme.of(context).textTheme.titleMedium
-                                ?.copyWith(
-                              fontWeight: FontWeight.w600,
-                              color: Theme.of(
-                                context,
-                              ).colorScheme.inversePrimary,
-                              fontSize: 14.px,
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              StringConstants.drawerTitle1.tr,
+                              style: Theme.of(context).textTheme.titleMedium
+                                  ?.copyWith(
+                                fontWeight: FontWeight.w600,
+                                color: Theme.of(
+                                  context,
+                                ).colorScheme.inversePrimary,
+                                fontSize: 14.px,
+                              ),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
                             ),
-                          ),
-                          Text(
-                            StringConstants.drawerTitle2.tr,
-                            style: Theme.of(Get.context!).textTheme.titleMedium
-                                ?.copyWith(
-                              fontWeight: FontWeight.w600,
-                              color: Theme.of(
-                                Get.context!,
-                              ).colorScheme.onPrimaryContainer,
-                              fontSize: 12.px,
+                            Text(
+                              StringConstants.drawerTitle2.tr,
+                              style: Theme.of(Get.context!).textTheme.titleMedium
+                                  ?.copyWith(
+                                fontWeight: FontWeight.w600,
+                                color: Theme.of(
+                                  Get.context!,
+                                ).colorScheme.onPrimaryContainer,
+                                fontSize: 12.px,
+                              ),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ],
                   ),

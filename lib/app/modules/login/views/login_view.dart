@@ -124,7 +124,7 @@ class LoginView extends GetView<LoginController> {
                           : Get.offAllNamed(Routes.BOTTOM_BAR),
                       text: StringConstants.loginButton.tr,
                     ),
-                    if(Platform.isAndroid || Platform.isIOS)...[
+                    if(!kIsWeb && (Platform.isAndroid || Platform.isIOS))...[
                       SizedBox(height: 16.px),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -152,7 +152,7 @@ class LoginView extends GetView<LoginController> {
                     ]
                   ],
                 ),
-                if(Platform.isAndroid || Platform.isIOS)...[
+                if(!kIsWeb && (Platform.isAndroid || Platform.isIOS))...[
                   Spacer(),
                   Text(
                     StringConstants.bySigningIn.tr,

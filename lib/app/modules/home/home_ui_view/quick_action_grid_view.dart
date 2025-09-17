@@ -82,20 +82,7 @@ class QuickActionGridView extends StatelessWidget {
           itemBuilder: (context, index) {
             return GestureDetector(
                 onTap: () {
-                  if (kIsWeb) {
-                    if (index == 0) {
-                      Get.toNamed(Routes.EXPENSE, parameters: {
-                        'tabValue': StringConstants.addExpense.tr,
-                      });
-                    }
-                    else if (index == 1) {
-
-                    }
-                    else if (index == 2) {
-                      Get.toNamed(Routes.REPORTS);
-                    }
-                  }
-                  else if (Platform.isAndroid || Platform.isIOS) {
+                  if (!kIsWeb && (Platform.isAndroid || Platform.isIOS)) {
                     if (index == 0) {
                       Get.toNamed(Routes.TRIP_MANAGEMENT, parameters: {
                         'tabValue': StringConstants.newTrip.tr,
@@ -113,7 +100,7 @@ class QuickActionGridView extends StatelessWidget {
                       });
                     }
                     else if (index == 1) {
-
+                      Get.toNamed(Routes.MAINTENANCE);
                     }
                     else if (index == 2) {
                       Get.toNamed(Routes.REPORTS);

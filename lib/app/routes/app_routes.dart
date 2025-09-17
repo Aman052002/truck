@@ -28,6 +28,7 @@ abstract class Routes {
   static const ADDTRUCK = _Paths.ADDTRUCK;
   static const ADD_CLIENT = _Paths.ADD_CLIENT;
   static const CLIENTS = _Paths.CLIENTS;
+  static const MAINTENANCE = _Paths.MAINTENANCE;
 }
 
 abstract class _Paths {
@@ -57,4 +58,5 @@ abstract class _Paths {
   static const ADDTRUCK = '/addtruck';
   static const ADD_CLIENT = '/add-client';
   static const CLIENTS = '/clients';
+  static const MAINTENANCE = '/maintenance';
 }

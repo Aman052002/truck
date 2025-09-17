@@ -28,6 +28,8 @@ import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
+import '../modules/maintenance/bindings/maintenance_binding.dart';
+import '../modules/maintenance/views/maintenance_view.dart';
 import '../modules/notification/bindings/notification_binding.dart';
 import '../modules/notification/views/notification_view.dart';
 import '../modules/otp/bindings/otp_binding.dart';
@@ -183,6 +185,11 @@ class AppPages {
       name: _Paths.CLIENTS,
       page: () => const ClientsView(),
       binding: ClientsBinding(),
+    ),
+    GetPage(
+      name: _Paths.MAINTENANCE,
+      page: () => const MaintenanceView(),
+      binding: MaintenanceBinding(),
     ),
   ];
 }

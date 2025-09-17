@@ -11,7 +11,7 @@ class AdminDashboardView extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        int crossAxisCount = constraints.maxWidth < 600 ? 2 : 8;
+        int crossAxisCount = constraints.maxWidth < 900 ? 3 : 6;
         return GridView.count(
           shrinkWrap: true,
           crossAxisCount: crossAxisCount,
@@ -82,6 +82,8 @@ class AdminDashboardView extends StatelessWidget {
               fontWeight: FontWeight.w600,
               color: Theme.of(context).colorScheme.onPrimaryContainer,
             ),
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
           ),
           SizedBox(height: 8),
           Text(
