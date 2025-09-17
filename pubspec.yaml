@@ -66,6 +66,15 @@ flutter_icons:
   image_path: "assets/images/truck_app_logo.png"
   adaptive_icon_background: "#ffffff"
   adaptive_icon_foreground: "assets/images/truck_app_logo.png"
+  web:
+    generate: true
+    image_path: "assets/images/truck_app_logo.png"
+    background_color: "#ffffff"
+    theme_color: "#ffffff"
+  windows:
+    generate: true
+    image_path: "assets/images/truck_app_logo.png"
+    icon_size: 48
 
 
 # For information on the generic Dart part of this file, see the
